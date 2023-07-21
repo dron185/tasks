@@ -32,7 +32,7 @@ body {
 	/* font-family: 'Forum', cursive; */
 	font-family: 'Inter', sans-serif;
 	font-weight: 400;
-	line-height: 1;
+	color: #000000;
 	background-color: rgb(165, 159, 159);
 }
 .wrapper {
@@ -42,6 +42,9 @@ body {
 	width: 1440px;
 	margin: 0 auto;
 }
+.container {
+	padding: 0 20px;
+}
 
 /* ----------header---------- */
 
@@ -50,7 +53,6 @@ body {
 	align-items: center;
 	min-height: 90px;
 	background-color: #0c0c0e;
-	padding: 0 20px;
 }
 
 .header__title {
@@ -118,16 +120,14 @@ body {
 
 .about {
 	padding-top: 20px;
-	padding-bottom: 40px;
+	padding-bottom: 35px;
 	background-color: #ffffff;
 }
 
-.about__container {
-	padding: 0 20px;
-}
-
-.about__title {
+.title-section {
 	position: relative;
+	padding-bottom: 20px;
+	margin-bottom: 40px;
 	font-family: Forum;
 	font-size: 40px;
 	line-height: 100%; /* 40/40 */
@@ -135,11 +135,9 @@ body {
 	text-transform: capitalize;
 	text-align: center;
 	color: #0C0C0E;
-	padding-bottom: 20px;
-	margin-bottom: 40px;
 }
 
-.about__title::after {
+.title-section::after {
 	position: absolute;
 	content: '';
 	width: 50px;
@@ -157,7 +155,6 @@ body {
 	font-size: 20px;
 	line-height: 200%; /* 40/20 */
 	text-align: center;
-	color: #000000;
 }
 
 .about__cards {
@@ -170,21 +167,346 @@ body {
 	display: flex;
 	justify-content: center;
 }
-
-.about__carousel-button {
+.about__radio-button {
 	width: 26px;
 	height: 26px;
-	padding: 5px;
-	cursor: pointer;
 }
 
 .about__button {
+	position: absolute;
+	width: 0;
+	height: 0;
+	opacity: 0;
+	z-index: -1;
+}
+.about__label {
+	display: inline-block;
+	position: relative;
+	width: 26px;
+	height: 26px;
+	cursor: pointer;
+}
+.about__label::before {
+	content: '';
+	display: block;
+	top: 5px;
+	left: 5px;
+	position: absolute;
 	width: 16px;
 	height: 16px;
 	border-radius: 50%;
 	background-color: #0c0c0e;
 }
+.about__button:checked + .about__label::before {
+	background-color: #bb945f;
+}
 
-.about__button_beige {
-	background-color: #BB945F;
+/*section favorites*/
+
+.favorites {
+	padding-top: 20px;
+	padding-bottom: 40px;
+	background-color: #ffffff;
+}
+
+.favorites__container {
+	padding: 0 60px 0 20px;
+}
+
+.favorites__seasons-title {
+	margin-bottom: 40px;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.favorites__seasons-radio {
+	display: flex;
+	column-gap: 90px;
+	margin-bottom: 40px;
+}
+
+.favorites__button {
+	position: absolute;
+	width: 0;
+	height: 0;
+	opacity: 0;
+	z-index: -1;
+}
+
+.favorites__label {
+	display: inline-block;
+	position: relative;
+	padding: 5px 5px 5px 42px;
+	cursor: pointer;
+	font-size: 20px;
+}
+
+.favorites__label::before {
+	content: '';
+	display: block;
+	top: 8.5px;
+	left: 5px;
+	position: absolute;
+
+	width: 17px;
+	height: 17px;
+	border-radius: 50%;
+	border: 2px solid #000000;
+	background-color: #ffffff;
+}
+
+.favorites__label::after {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background-color: #000000;
+	opacity: 0;
+	transition: 0.1s ease-in;
+}
+
+.favorites__button:checked + .favorites__label {
+	font-weight: 700;
+	font-size: 20px;
+}
+
+.favorites__button:checked + .favorites__label::before {
+	top: 9px;
+}
+
+.favorites__button:checked + .favorites__label::after {
+	opacity: 1;
+	top: 14px;
+}
+
+.cards-hidden {
+	padding-top: 40px;
+	display: none;
+}
+
+.favorites__cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	row-gap: 40px;
+}
+
+.favorites__card {
+	flex: 0 1 50%;
+	display: flex;
+	flex-direction: column;
+
+	padding: 15px 0 15px 20px;
+	position: relative;
+	max-width: 550px;
+	min-height: 555px;
+	border: 1px solid #000000;
+}
+
+.favorites__card-title {
+	position: relative;
+	font-family: Forum;
+	font-size: 20px;
+	line-height: 200%; /* 40/20 */
+	letter-spacing: 2px;
+	text-transform: capitalize;
+	margin-bottom: 20px;
+}
+.favorites__card-title::after {
+	display: block;
+	position: absolute;
+	content: '';
+	width: 60px;
+	height: 1px;
+	background-color: #bb945f;
+	bottom: 0;
+	left: 0;
+}
+
+
+.favorites__book-title {
+	margin-bottom: 20px;
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 266.67%; /* 40/15 */
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+.favorites__book-title span {
+	text-transform: capitalize;
+}
+
+.favorites__book-text {
+	flex: 1 1 auto;
+	max-width: 355px;
+	font-size: 15px;
+	line-height: 266.67%; /* 40/15 */
+	letter-spacing: 2px;
+	text-transform: capitalize;
+}
+.favorites__card-pic {
+	position: absolute;
+	right: -40px;
+	bottom: -1px;
+}
+.favorites__btn {
+	width: 75px;
+	padding: 8px 26px;
+	text-align: center;
+	cursor: pointer;
+	background-color: #ffffff;
+	border: 1px solid #0c0c0e;
+	border-radius: 2px;
+
+	color: #0c0c0e;
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	font-style: normal;
+	line-height: normal;
+	transition: all 0.3s ease-in;
+}
+
+.favorites__btn:hover {
+	background-color: #bb945f;
+	border: 1px solid #bb945f;
+}
+
+.favorites__btn_dis {
+	border: 1px solid #bb945f;
+	color: #bb945f;
+	pointer-events: none;
+}
+
+/* Section Coffe Shop */
+
+.coffeshop {
+	padding-top: 20px;
+	padding-bottom: 40px;
+	background-color: #ffffff;
+}
+
+.coffeshop__subtitle {
+	margin-bottom: 40px;
+	font-size: 20px;
+	line-height: 200%; /* 40/20 */
+	letter-spacing: 2px;
+	text-align: center;
+}
+
+.coffeshop__menu {
+	display: flex;
+	justify-content: space-between;
+}
+
+.coffeshop__drinks {
+	width: 438px;
+}
+
+.menu-coffeshop__list > *:not(:last-child) {
+	margin-bottom: 40px;
+}
+
+.menu-coffeshop__title {
+	margin-bottom: 40px;
+	color: #BB945F;
+	font-family: Forum;
+	font-size: 40px;
+	line-height: 100%; /* 40/40 */
+	letter-spacing: 2px;
+	text-transform: capitalize;
+}
+
+.menu-coffeshop__item {
+	display: flex;
+	align-items: center;
+}
+
+.menu-coffeshop__name {
+	flex: 1 1 auto;
+	font-size: 20px;
+	line-height: 200%; /* 40/20 */
+	letter-spacing: 2px;
+	text-transform: capitalize;
+}
+
+.menu-coffeshop__line {
+	margin-right: 60px;
+	width: 100px;
+	height: 1px;
+	background-color: #bb945f;
+}
+
+.menu-coffeshop__price {
+}
+.coffeshop__deserts {
+	width: 482px;
+}
+
+/* Section Our Contacts */
+
+.contacts {
+	padding-top: 20px;
+	padding-bottom: 40px;
+	background-color: #ffffff;
+}
+
+.contacts__info {
+	display: flex;
+	justify-content: space-between;
+}
+
+.contacts__items {
+}
+
+.contacts__phones {
+	margin-bottom: 40px;
+}
+
+.contacts__info-title {
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 200%; /* 40/20 */
+	letter-spacing: 2px;
+	text-transform: capitalize;
+}
+
+.contacts__phones-title {
+	margin-bottom: 40px;
+}
+
+.contacts__staff-title {
+	margin-bottom: 20px;
+}
+
+.contacts__info-item {
+	font-size: 20px;
+	line-height: 200%; /* 40/20 */
+	letter-spacing: 2px;
+	text-transform: capitalize;
+}
+
+.contacts__info-item:not(:last-child) {
+	margin-bottom: 20px;
+}
+
+.contacts__info-tel {
+	display: inline-block;
+	color: #000000;
+	transition: all 0.2s ease-in;
+}
+
+.contacts__info-tel:hover {
+	text-decoration: underline;
+	color: #bb945f;
+}
+
+.contacts__map-img {
+	max-width: 100%;
+	height: auto;
 }

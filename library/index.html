@@ -79,7 +79,7 @@
 							<h3 class="favorites__seasons-title">Pick favorites of season</h3>
 							<div class="favorites__seasons-radio">
 								<div class="favorites__season-radio">
-									<input type="radio" name="season" id="winter" class="favorites__button">
+									<input type="radio" name="season" id="winter" class="favorites__button" checked>
 									<label for="winter" class="favorites__label">Winter</label>
 								</div>
 								<div class="favorites__season-radio">
@@ -329,6 +329,32 @@
 						</div>
 						<div class="contacts__map">
 							<img src="assets/img/map.png" alt="map" class="contacts__map-img">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="librarycard">
+				<div class="librarycard__container container">
+					<h2 class="title-section">Digital Library Cards</h2>
+					<div class="librarycard__row">
+						<div class="librarycard__findcard findcard">
+							<h3 class="findcard__title">Find your Library card</h3>
+							<form action="#" class="findcard__form">
+								<fieldset class="findcard__inputs">
+									<h4 class="findcard__body-title">Brooklyn Public Library</h4>
+									<input autocomplete="off" type="text" required name="name" placeholder="Reader's name" class="findcard__input" pattern="^[a-zA-Z\-]+$">
+									<input autocomplete="off" type="text" required name="number" placeholder="Card number" class="findcard__input" pattern="^[ 0-9A-Z]+$">
+								</fieldset>
+								<button class="findcard__button">Check the card</button>
+							</form>
+						</div>
+						<div class="librarycard__getcard">
+							<h3 class="librarycard__getcard-title">Get a reader card</h3>
+							<p class="librarycard__getcard-subtitle">You will be able to see a reader card after <br> logging into account or you can register a new account</p>
+							<div class="librarycard_buttons">
+								<button class="librarycard_button">Sign Up</button>
+								<button class="librarycard_button">Log in</button>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -167,6 +167,7 @@ body {
 	display: flex;
 	justify-content: center;
 }
+
 .about__radio-button {
 	width: 26px;
 	height: 26px;
@@ -179,6 +180,7 @@ body {
 	opacity: 0;
 	z-index: -1;
 }
+
 .about__label {
 	display: inline-block;
 	position: relative;
@@ -186,6 +188,7 @@ body {
 	height: 26px;
 	cursor: pointer;
 }
+
 .about__label::before {
 	content: '';
 	display: block;
@@ -197,6 +200,7 @@ body {
 	border-radius: 50%;
 	background-color: #0c0c0e;
 }
+
 .about__button:checked + .about__label::before {
 	background-color: #bb945f;
 }
@@ -317,6 +321,7 @@ body {
 	text-transform: capitalize;
 	margin-bottom: 20px;
 }
+
 .favorites__card-title::after {
 	display: block;
 	position: absolute;
@@ -328,7 +333,6 @@ body {
 	left: 0;
 }
 
-
 .favorites__book-title {
 	margin-bottom: 20px;
 	font-size: 15px;
@@ -337,6 +341,7 @@ body {
 	letter-spacing: 2px;
 	text-transform: uppercase;
 }
+
 .favorites__book-title span {
 	text-transform: capitalize;
 }
@@ -349,11 +354,13 @@ body {
 	letter-spacing: 2px;
 	text-transform: capitalize;
 }
+
 .favorites__card-pic {
 	position: absolute;
 	right: -40px;
 	bottom: -1px;
 }
+
 .favorites__btn {
 	width: 75px;
 	padding: 8px 26px;
@@ -367,8 +374,6 @@ body {
 	font-size: 10px;
 	font-weight: 700;
 	letter-spacing: 1px;
-	font-style: normal;
-	line-height: normal;
 	transition: all 0.3s ease-in;
 }
 
@@ -509,4 +514,156 @@ body {
 .contacts__map-img {
 	max-width: 100%;
 	height: auto;
+}
+
+/* Section librarycard */
+
+.librarycard {
+	padding-top: 20px;
+	padding-bottom: 41px;
+	background-color: #ffffff;
+}
+
+.librarycard {
+}
+.librarycard__container {
+}
+
+.librarycard__row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.librarycard__findcard {
+	
+}
+
+.findcard {
+
+}
+
+.findcard__title {
+	margin-bottom: 30px;
+	font-size: 30px;
+	letter-spacing: 0.6px;
+	text-align: center;
+}
+
+.findcard__form {
+	padding: 17px 17px 27px;
+	width: 600px;
+	border: 3px solid #bb945f;
+	background-color: #ffffff;
+}
+
+.findcard__inputs {
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	padding: 20px 20px 25px;
+	background-color: #bb945f;
+}
+
+.findcard__body-title {
+	margin-bottom: 20px;
+	font-family: Forum;
+	font-size: 30px;
+	line-height: 166.67%; /* 50/30 */
+	letter-spacing: 0.6px;
+}
+
+.findcard__input{
+	min-height: 66px;
+	padding-left: 20px;
+	border-radius: 10px;
+	color: #bb945f;
+	font-family: Forum;
+	font-size: 30px;
+	line-height: 166.67%; /* 50/30 */
+	letter-spacing: 0.6px;
+}
+
+.findcard__input::placeholder {
+	color: #8e8e8e;
+}
+
+
+.findcard__input:not(:last-child) {
+	margin-bottom: 25px;
+}
+
+
+.findcard__button {
+	margin: 0 auto;
+	min-height: 44px;
+	padding: 5px 39px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 2px;
+	border: 1px solid #0C0C0E;
+	background-color: #ffffff;
+	cursor: pointer;
+	color: #0c0c0e;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	transition: all 0.3s ease-in;
+}
+
+.findcard__button:hover {
+	background-color: #bb945f;
+	border: 1px solid #bb945f;
+}
+
+.librarycard__getcard {
+}
+
+.librarycard__getcard > *:not(:last-child) {
+	margin-bottom: 35px;
+}
+
+.librarycard__getcard-title {
+	text-align: right;
+	font-family: Forum;
+	font-size: 30px;
+	letter-spacing: 0.6px;
+}
+
+.librarycard__getcard-subtitle {
+	max-width: 456px;
+	text-align: right;
+	font-size: 20px;
+	line-height: 200%; /* 40/20 */
+	letter-spacing: 0.4px;
+}
+
+.librarycard_buttons {
+	display: flex;
+	justify-content: flex-end;
+	column-gap: 20px;
+}
+
+.librarycard_button {
+	min-height: 30px;
+	min-width: 75px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	cursor: pointer;
+	background-color: #ffffff;
+	border: 1px solid #0c0c0e;
+	border-radius: 2px;
+	color: #0c0c0e;
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	transition: all 0.3s ease-in;
+}
+
+.librarycard_button:hover {
+	background-color: #bb945f;
+	border-color: #bb945f;
 }

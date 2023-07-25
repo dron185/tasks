@@ -34,7 +34,6 @@ body {
 	font-family: 'Inter', sans-serif;
 	font-weight: 400;
 	color: #000000;
-	background-color: rgb(165, 159, 159);
 }
 .wrapper {
 	display: flex;
@@ -101,9 +100,16 @@ body {
 
 .welcome {
 	padding: 220px 0 160px 0;
-	min-height: 600px;
-	background: url(assets/img/welcome-bg.png) center/cover no-repeat;
-	height: 100%;
+	height: 600px;
+	background-image: linear-gradient(180deg, #0c0c0e 0%, #0c0c0e 0.01%, rgba(18, 18, 21, 0.10) 50%), url(assets/img/welcome-bg.png);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+}
+
+.welcome__container {
+	padding: 0;
 }
 
 .welcome__title {
@@ -123,7 +129,7 @@ body {
 /*section about*/
 
 .about {
-	padding-top: 20px;
+	padding-top: 24px;
 	padding-bottom: 35px;
 	background-color: #ffffff;
 }
@@ -212,7 +218,7 @@ body {
 /*section favorites*/
 
 .favorites {
-	padding-top: 20px;
+	padding-top: 18px;
 	padding-bottom: 40px;
 	background-color: #ffffff;
 }
@@ -222,15 +228,15 @@ body {
 }
 
 .favorites__seasons-title {
-	margin-bottom: 40px;
+	margin-bottom: 35px;
 	font-size: 20px;
 	font-weight: 700;
 }
 
 .favorites__seasons-radio {
 	display: flex;
-	column-gap: 90px;
-	margin-bottom: 40px;
+	column-gap: 85px;
+	margin-bottom: 35px;
 }
 
 .favorites__button {
@@ -244,7 +250,7 @@ body {
 .favorites__label {
 	display: inline-block;
 	position: relative;
-	padding: 5px 5px 5px 42px;
+	padding: 5px 5px 5px 38px;
 	cursor: pointer;
 	font-size: 20px;
 }
@@ -253,7 +259,7 @@ body {
 	content: '';
 	display: block;
 	top: 8.5px;
-	left: 5px;
+	left: 0;
 	position: absolute;
 
 	width: 17px;
@@ -267,7 +273,7 @@ body {
 	content: '';
 	display: block;
 	position: absolute;
-	left: 10px;
+	left: 5px;
 	top: 10px;
 
 	width: 7px;
@@ -478,7 +484,7 @@ body {
 /* Section Our Contacts */
 
 .contacts {
-	padding-top: 20px;
+	padding-top: 22px;
 	padding-bottom: 40px;
 	background-color: #ffffff;
 }
@@ -704,7 +710,7 @@ body {
 
 .footer__info-text {
 	display: inline-block;
-	margin-bottom: 10px;
+	margin-bottom: 18px;
 	color: #ffffff;
 	font-size: 15px;
 	line-height: 133.33%;
@@ -744,7 +750,6 @@ body {
 
 .footer__bottom {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
 	padding-top: 44px;
 	color: #ffffff;
@@ -753,10 +758,15 @@ body {
 	letter-spacing: 2px;
 }
 
+.footer__bottom-year {
+	margin-right: 494px;
+}
+
 .footer__bottom-rsschool {
 	display: block;
 	color: #ffffff;
 	transition: opacity 0.2s ease-in;
+	flex:  1 1 auto;
 }
 
 .footer__bottom-rsschool:hover, 

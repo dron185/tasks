@@ -244,6 +244,19 @@ body {
 	margin-bottom: 35px;
 }
 
+.favorites__season-radio_winter {
+	width: 109.39px;
+}
+.favorites__season-radio_spring {
+	width: 104.03px;
+}
+.favorites__season-radio_summer {
+	width: 121.25px;
+}
+.favorites__season-radio_autumn {
+	width: 116.13px;
+}
+
 .favorites__button {
 	position: absolute;
 	width: 0;

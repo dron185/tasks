@@ -40,8 +40,9 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
-	width: 1440px;
+	max-width: 1440px;
 	margin: 0 auto;
+	overflow: hidden;
 }
 
 .container {
@@ -69,10 +70,10 @@ body {
 	line-height: 166.66%; /* 50/30 */
 	letter-spacing: 0.6px;
 	color: #ffffff;
+	flex: 1 1 auto;
 }
 
 .header__menu {
-	margin-left: 454px;
 	margin-right: 40px;
 }
 
@@ -95,6 +96,96 @@ body {
 	opacity: 0.8;
 }
 
+.header__icon {
+	z-index: 300;
+}
+
+.burger {
+	position: relative;
+	display: none;
+	width: 45px;
+	height: 22px;
+	margin-left: 40px;
+	cursor: pointer;
+}
+
+.burger__line {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+	height: 2px;
+	background-color: #ffffff;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.burger::before,
+.burger::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: #ffffff;
+	transition: transform 0.3s ease-in-out;
+}
+
+.burger::before {
+	top: 0;
+}
+
+.burger::after {
+	bottom: 0;
+}
+
+.burger_active .burger__line {
+	opacity: 0;
+}
+
+.burger_active::before {
+	top: 50%;
+	transform: rotate(45deg);
+}
+
+.burger_active::after {
+	bottom: auto;
+	top: 50%;
+	transform: rotate(-45deg);
+}
+
+@media (max-width: 1024px) {
+	.burger {
+		display: block;
+		z-index: 101;
+	}
+
+	.header__menu {
+		position: fixed;
+		right: 0;
+		top: 0;
+		margin-right: 0;
+		background-color: #000000;
+		z-index: 100;
+		max-width: 332px;
+		/* height: 100vh; */
+		transform: translateX(100%);
+		transition: transform 0.3s ease-in;
+		/* overflow-y: auto; */
+	}
+
+	.header__menu_active {
+		transform: translateX(0);
+	}
+
+	.header__list {
+		flex-direction: column;
+		align-items: center;
+		row-gap: 30px;
+		padding: 100px 107px;
+	}
+}
+
 /* ----------main---------- */
 
 .main {
@@ -110,7 +201,8 @@ body {
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	
+	width: 100%;
+	height: 100%;
 }
 
 .welcome__container {
@@ -174,8 +266,27 @@ body {
 
 .about__cards {
 	display: flex;
-	justify-content: space-between;
+	/* justify-content: space-between; */
 	margin-bottom: 35px;
+	column-gap: 25px;
+}
+
+.about__card-pic {
+	max-width: 100%;
+	/* flex: 0 1 33.333%; */
+}
+
+@media screen and (max-width: 1024px) {
+	.about__cards {
+		column-gap: 0px;
+		justify-content: center;
+	}
+	.about__card_first {
+		margin-right: 25px;
+	}
+	.about__card_hidden {
+		display: none;
+	 }
 }
 
 .about__carousel {

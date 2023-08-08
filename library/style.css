@@ -266,27 +266,21 @@ body {
 
 .about__cards {
 	display: flex;
-	/* justify-content: space-between; */
 	margin-bottom: 35px;
 	column-gap: 25px;
 }
 
-.about__card-pic {
-	max-width: 100%;
-	/* flex: 0 1 33.333%; */
+.about__arrow {
+	display: none;
+	cursor: pointer;
 }
 
-@media screen and (max-width: 1024px) {
-	.about__cards {
-		column-gap: 0px;
-		justify-content: center;
-	}
-	.about__card_first {
-		margin-right: 25px;
-	}
-	.about__card_hidden {
-		display: none;
-	 }
+/* .about__arrow img {
+	display: inline-block;
+} */
+
+.about__card-pic {
+	max-width: 100%;
 }
 
 .about__carousel {
@@ -297,6 +291,11 @@ body {
 .about__radio-button {
 	width: 26px;
 	height: 26px;
+}
+
+.about__radio-button_fourth, 
+.about__radio-button_fifth {
+	display: none;
 }
 
 .about__button {
@@ -330,6 +329,40 @@ body {
 .about__button:checked + .about__label::before {
 	background-color: #bb945f;
 }
+
+@media (max-width: 1024px) {
+	.about__cards {
+		justify-content: center;
+	}
+
+	.about__card_third {
+		display: none;
+	}
+
+	.about__radio-button_fourth {
+		display: block;
+	}
+}
+
+@media (max-width: 768px) {
+	.about__cards {
+		column-gap: 58px;
+	}
+	.about__arrow {
+		display: flex;
+		
+	}
+
+	.about__card_second {
+		display: none;
+	}
+
+	.about__radio-button_fourth, 
+	.about__radio-button_fifth {
+		display: block;
+	}
+}
+
 
 /*section favorites*/
 

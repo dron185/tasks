@@ -851,15 +851,12 @@ body {
 	border: 1px solid #bb945f;
 }
 
-.librarycard__getcard > *:not(:last-child) {
-	margin-bottom: 35px;
-}
-
 .librarycard__getcard-title {
 	text-align: right;
 	font-family: Forum;
 	font-size: 30px;
 	letter-spacing: 0.6px;
+	margin-bottom: 35px;
 }
 
 .librarycard__getcard-subtitle {
@@ -868,6 +865,7 @@ body {
 	font-size: 20px;
 	line-height: 200%; /* 40/20 */
 	letter-spacing: 0.4px;
+	margin-bottom: 35px;
 }
 
 .librarycard_buttons {
@@ -912,6 +910,7 @@ body {
 	.librarycard__getcard-subtitle {
 		text-align: center;
 		max-width: 600px;
+		margin-bottom: 40px;
 	}
 
 	.librarycard_buttons {
@@ -1017,4 +1016,18 @@ body {
 .footer__bottom-name:hover,
 .footer__bottom-name:active {
 	opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+	.footer__bottom {
+		justify-content: flex-start;
+	}
+
+	.footer__bottom-year {
+		flex-basis: 25.55%;
+	}
+
+	.footer__bottom-rsschool {
+		flex: 1 1 auto;
+	}
 }

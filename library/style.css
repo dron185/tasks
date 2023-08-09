@@ -165,7 +165,7 @@ body {
 		right: 0;
 		top: 0;
 		margin-right: 0;
-		background-color: #000000;
+		background-color: #0c0c0e;
 		z-index: 100;
 		max-width: 332px;
 		/* height: 100vh; */
@@ -274,10 +274,6 @@ body {
 	display: none;
 	cursor: pointer;
 }
-
-/* .about__arrow img {
-	display: inline-block;
-} */
 
 .about__card-pic {
 	max-width: 100%;
@@ -472,10 +468,14 @@ body {
 	row-gap: 40px;
 }
 
+.favorites__item {
+	/* flex: 0 1 50%; */
+	
+}
+
 .favorites__card {
 	max-width: 550px;
 	height: 555px;
-	flex: 0 1 50%;
 	padding: 15px 0 15px 20px;
 	display: flex;
 	border: 1px solid #000000;
@@ -566,6 +566,25 @@ body {
 	pointer-events: none;
 }
 
+@media (max-width: 1240px) {
+	.favorites__cards {
+		margin: 0 -30px;
+		justify-content: center;
+	}
+
+	.favorites__item {
+		padding: 0 30px;
+		
+	}
+}
+
+@media (max-width: 750px) {
+	.favorites__seasons-radio {
+		column-gap: 40px;
+	}
+}
+
+
 /* Section Coffe Shop */
 
 .coffeshop {
@@ -584,6 +603,8 @@ body {
 
 .coffeshop__menu {
 	display: flex;
+	flex-wrap: wrap;
+	row-gap: 40px;
 	justify-content: space-between;
 }
 
@@ -643,7 +664,17 @@ body {
 	column-gap: 60px;
 }
 
-/* Section Our Contacts */
+@media (max-width: 1024px) {
+	.coffeshop__menu {
+		flex-direction: column;
+	}
+
+	.coffeshop__deserts {
+		margin-left: auto;
+	}
+}
+
+/* -----------Section Our Contacts----------- */
 
 .contacts {
 	padding-top: 22px;
@@ -718,7 +749,21 @@ body {
 	height: auto;
 }
 
-/* Section librarycard */
+@media (max-width: 1270px) {
+	.contacts__info {
+		flex-direction: column;
+	}
+
+	.contacts__items {
+		margin-bottom: 100px;
+	}
+
+	.contacts__map {
+		margin: 0 auto;
+	}
+}
+
+/* -------------Section librarycard------------- */
 
 .librarycard {
 	padding-top: 20px;
@@ -855,6 +900,29 @@ body {
 	border-color: #bb945f;
 }
 
+@media (max-width: 1270px) {
+	.librarycard__row {
+		flex-direction: column;
+		align-items: center;
+	}
+	.librarycard__getcard-title {
+		text-align: center;
+	}
+
+	.librarycard__getcard-subtitle {
+		text-align: center;
+		max-width: 600px;
+	}
+
+	.librarycard_buttons {
+		justify-content: center;
+	}
+
+	.librarycard__row {
+		row-gap: 21px;
+	}
+}
+
 /* FOOTER */
 
 .footer {
@@ -912,6 +980,7 @@ body {
 
 .footer__bottom {
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
 	padding-top: 44px;
 	color: #ffffff;
@@ -921,14 +990,14 @@ body {
 }
 
 .footer__bottom-year {
-	margin-right: 494px;
+	/* flex-basis: 39.29%; */
 }
 
 .footer__bottom-rsschool {
 	display: block;
 	color: #ffffff;
 	transition: opacity 0.2s ease-in;
-	flex:  1 1 auto;
+	/* flex:  1 1 auto; */
 }
 
 .footer__bottom-rsschool:hover, 

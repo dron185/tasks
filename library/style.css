@@ -40,8 +40,9 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
-	width: 1440px;
+	max-width: 1440px;
 	margin: 0 auto;
+	overflow: hidden;
 }
 
 .container {
@@ -69,10 +70,10 @@ body {
 	line-height: 166.66%; /* 50/30 */
 	letter-spacing: 0.6px;
 	color: #ffffff;
+	flex: 1 1 auto;
 }
 
 .header__menu {
-	margin-left: 454px;
 	margin-right: 40px;
 }
 
@@ -95,6 +96,100 @@ body {
 	opacity: 0.8;
 }
 
+.header__icon {
+	z-index: 300;
+}
+
+.burger {
+	position: relative;
+	display: none;
+	width: 45px;
+	height: 22px;
+	margin-left: 40px;
+	cursor: pointer;
+}
+
+.burger__line {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+	height: 2px;
+	background-color: #ffffff;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.burger::before,
+.burger::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: #ffffff;
+	transition: transform 0.3s ease-in-out;
+}
+
+.burger::before {
+	top: 0;
+}
+
+.burger::after {
+	bottom: 0;
+}
+
+.burger_active .burger__line {
+	opacity: 0;
+}
+
+.burger_active::before {
+	top: 50%;
+	transform: rotate(45deg);
+}
+
+.burger_active::after {
+	bottom: auto;
+	top: 50%;
+	transform: rotate(-45deg);
+}
+
+/* .stop-scroll {
+	overflow: hidden;
+} */
+
+@media (max-width: 1024px) {
+	.burger {
+		display: block;
+		z-index: 101;
+	}
+
+	.header__menu {
+		position: fixed;
+		right: 0;
+		top: 0;
+		margin-right: 0;
+		background-color: #0c0c0e;
+		z-index: 100;
+		max-width: 332px;
+		/* height: 100vh; */
+		transform: translateX(100%);
+		transition: transform 0.3s ease-in;
+		/* overflow-y: auto; */
+	}
+
+	.header__menu_active {
+		transform: translateX(0);
+	}
+
+	.header__list {
+		flex-direction: column;
+		align-items: center;
+		row-gap: 30px;
+		padding: 100px 107px;
+	}
+}
+
 /* ----------main---------- */
 
 .main {
@@ -110,7 +205,8 @@ body {
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	
+	width: 100%;
+	height: 100%;
 }
 
 .welcome__container {
@@ -174,8 +270,21 @@ body {
 
 .about__cards {
 	display: flex;
-	justify-content: space-between;
 	margin-bottom: 35px;
+	column-gap: 25px;
+
+	
+}
+
+.about__arrow {
+	display: none;
+	cursor: pointer;
+
+	
+}
+
+.about__card-pic {
+	max-width: 100%;
 }
 
 .about__carousel {
@@ -186,6 +295,11 @@ body {
 .about__radio-button {
 	width: 26px;
 	height: 26px;
+}
+
+.about__radio-button_fourth, 
+.about__radio-button_fifth {
+	display: none;
 }
 
 .about__button {
@@ -219,6 +333,40 @@ body {
 .about__button:checked + .about__label::before {
 	background-color: #bb945f;
 }
+
+@media (max-width: 1024px) {
+	.about__cards {
+		justify-content: center;
+	}
+
+	.about__card_third {
+		display: none;
+	}
+
+	.about__radio-button_fourth {
+		display: block;
+	}
+}
+
+@media (max-width: 768px) {
+	.about__cards {
+		column-gap: 58px;
+	}
+	.about__arrow {
+		display: inline-block;
+		margin-top: 288.5px;
+	}
+
+	.about__card_second {
+		display: none;
+	}
+
+	.about__radio-button_fourth, 
+	.about__radio-button_fifth {
+		display: block;
+	}
+}
+
 
 /*section favorites*/
 
@@ -331,7 +479,6 @@ body {
 .favorites__card {
 	max-width: 550px;
 	height: 555px;
-	flex: 0 1 50%;
 	padding: 15px 0 15px 20px;
 	display: flex;
 	border: 1px solid #000000;
@@ -422,6 +569,25 @@ body {
 	pointer-events: none;
 }
 
+@media (max-width: 1240px) {
+	.favorites__cards {
+		margin: 0 -30px;
+		justify-content: center;
+	}
+
+	.favorites__item {
+		padding: 0 30px;
+		
+	}
+}
+
+@media (max-width: 750px) {
+	.favorites__seasons-radio {
+		column-gap: 40px;
+	}
+}
+
+
 /* Section Coffe Shop */
 
 .coffeshop {
@@ -440,6 +606,8 @@ body {
 
 .coffeshop__menu {
 	display: flex;
+	flex-wrap: wrap;
+	row-gap: 40px;
 	justify-content: space-between;
 }
 
@@ -499,7 +667,17 @@ body {
 	column-gap: 60px;
 }
 
-/* Section Our Contacts */
+@media (max-width: 1024px) {
+	.coffeshop__menu {
+		flex-direction: column;
+	}
+
+	.coffeshop__deserts {
+		margin-left: auto;
+	}
+}
+
+/* -----------Section Our Contacts----------- */
 
 .contacts {
 	padding-top: 22px;
@@ -574,7 +752,21 @@ body {
 	height: auto;
 }
 
-/* Section librarycard */
+@media (max-width: 1270px) {
+	.contacts__info {
+		flex-direction: column;
+	}
+
+	.contacts__items {
+		margin-bottom: 100px;
+	}
+
+	.contacts__map {
+		margin: 0 auto;
+	}
+}
+
+/* -------------Section librarycard------------- */
 
 .librarycard {
 	padding-top: 20px;
@@ -662,15 +854,12 @@ body {
 	border: 1px solid #bb945f;
 }
 
-.librarycard__getcard > *:not(:last-child) {
-	margin-bottom: 35px;
-}
-
 .librarycard__getcard-title {
 	text-align: right;
 	font-family: Forum;
 	font-size: 30px;
 	letter-spacing: 0.6px;
+	margin-bottom: 35px;
 }
 
 .librarycard__getcard-subtitle {
@@ -679,6 +868,7 @@ body {
 	font-size: 20px;
 	line-height: 200%; /* 40/20 */
 	letter-spacing: 0.4px;
+	margin-bottom: 35px;
 }
 
 .librarycard_buttons {
@@ -709,6 +899,31 @@ body {
 .librarycard_button:active {
 	background-color: #bb945f;
 	border-color: #bb945f;
+}
+
+@media (max-width: 1270px) {
+	.librarycard__row {
+		flex-direction: column;
+		align-items: center;
+	}
+	.librarycard__getcard-title {
+		text-align: center;
+		margin-bottom: 40px;
+	}
+
+	.librarycard__getcard-subtitle {
+		text-align: center;
+		max-width: 600px;
+		margin-bottom: 40px;
+	}
+
+	.librarycard_buttons {
+		justify-content: center;
+	}
+
+	.librarycard__row {
+		row-gap: 21px;
+	}
 }
 
 /* FOOTER */
@@ -768,6 +983,7 @@ body {
 
 .footer__bottom {
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
 	padding-top: 44px;
 	color: #ffffff;
@@ -776,15 +992,15 @@ body {
 	letter-spacing: 2px;
 }
 
-.footer__bottom-year {
-	margin-right: 494px;
-}
+/* .footer__bottom-year {
+	flex-basis: 39.29%;
+} */
 
 .footer__bottom-rsschool {
 	display: block;
 	color: #ffffff;
 	transition: opacity 0.2s ease-in;
-	flex:  1 1 auto;
+	/* flex:  1 1 auto; */
 }
 
 .footer__bottom-rsschool:hover, 
@@ -804,4 +1020,18 @@ body {
 .footer__bottom-name:hover,
 .footer__bottom-name:active {
 	opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+	.footer__bottom {
+		justify-content: flex-start;
+	}
+
+	.footer__bottom-year {
+		flex-basis: 25.55%;
+	}
+
+	.footer__bottom-rsschool {
+		flex: 1 1 auto;
+	}
 }

@@ -37,6 +37,9 @@
 				<div class="header__icon">
 					<img src="assets/svg/icon-header.svg" alt="Profile-icon">
 				</div>
+				<div class="burger">
+					<span class="burger__line"></span>
+				</div>
 			</div>
 		</header>
 		<main class="main">
@@ -50,9 +53,11 @@
 					<h2 class="about__title title-section">About</h2>
 					<p class="about__subtitle">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside </p>
 					<div class="about__cards">
-						<img src="assets/img/about-1.jpg" alt="library-card" class="about__card">
-						<img src="assets/img/about-2.jpg" alt="library-card" class="about__card">
-						<img src="assets/img/about-3.jpg" alt="library-card" class="about__card">
+						<div class="about__arrow about__arrow_left"><img src="assets/svg/carret_left.svg" alt=""></div>
+						<div class="about__card"><img src="assets/img/about-1.jpg" alt="library-card" class="about__card-pic"></div>
+						<div class="about__card about__card_second"><img src="assets/img/about-2.jpg" alt="library-card" class="about__card-pic"></div>
+						<div class="about__card about__card_third"><img src="assets/img/about-3.jpg" alt="library-card" class="about__card-pic"></div>
+						<div class="about__arrow about__arrow_right"><img src="assets/svg/carret_right.svg" alt=""></div>
 					</div>
 					<div class="about__carousel">		
 						<div class="about__radio-button">
@@ -66,6 +71,14 @@
 						<div class="about__radio-button">
 							<input type="radio" name="button" id="radio-3" class="about__button" disabled>
 							<label for="radio-3" class="about__label"></label>
+						</div>
+						<div class="about__radio-button about__radio-button_fourth">
+							<input type="radio" name="button" id="radio-4" class="about__button" disabled>
+							<label for="radio-4" class="about__label"></label>
+						</div>
+						<div class="about__radio-button about__radio-button_fifth">
+							<input type="radio" name="button" id="radio-5" class="about__button" disabled>
+							<label for="radio-5" class="about__label"></label>
 						</div>
 					</div>
 				</div>
@@ -96,54 +109,61 @@
 							</div>
 						</div>
 						<div class="favorites__winter">
-							<div class="favorites__cards">
-								<div class="favorites__card">
-									<div class="favorites__card-info">
-										<h3 class="favorites__card-title">Staff Picks</h3>
-										<h4 class="favorites__book-title">The Book Eaters <br><span>By Sunyi Dean</span></h4>
-										<p class="favorites__book-text">An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous mind-eater son from tradition and certain death. Complete with dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.</p>
-										<button class="favorites__btn">Buy</button>
-									</div>
-									<div class="favorites__card-pic">
-										<img src="assets/img/book-1.png" alt="The Book Eaters">
-									</div>
-								</div>
-								<div class="favorites__card">
-									<div class="favorites__card-info">
-										<h3 class="favorites__card-title">Staff Picks</h3>
-										<h4 class="favorites__book-title">Cackle <br><span>By Rachel Harrison</span></h4>
-										<p class="favorites__book-text">Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.</p>
-										<button class="favorites__btn">Buy</button>
-									</div>
-									<div class="favorites__card-pic">
-										<img src="assets/img/book-2.png" alt="Cackle">
-									</div>	
-								</div>
-								<div class="favorites__card">
-									<div class="favorites__card-info">
-										<h3 class="favorites__card-title">Staff Picks</h3>
-										<h4 class="favorites__book-title">Dante: Poet of the Secular World <br><span>By Erich Auerbach</span></h4>
-										<p class="favorites__book-text">Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.</p>
-										<button class="favorites__btn">Buy</button>
-									</div>
-									<div class="favorites__card-pic">
-										<img src="assets/img/book-3.png" alt="Poet of the Secular World">
-									</div>	
-								</div>
-								<div class="favorites__card">
-									<div class="favorites__card-info">
-										<h3 class="favorites__card-title">Staff Picks</h3>
-										<h4 class="favorites__book-title">The Last Queen <br><span>By Clive Irving</span></h4>
-										<p class="favorites__book-text">A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.</p>
-										<button class="favorites__btn favorites__btn_dis" type="button" disabled>Own</button>
-									</div>
-									<div class="favorites__card-pic">
-										<img src="assets/img/book-4.png" alt="The Last Queen">
+							<div class="favorites__cards">			
+								<div class="favorites__item">
+									<div class="favorites__card">
+										<div class="favorites__card-info">
+											<h3 class="favorites__card-title">Staff Picks</h3>
+											<h4 class="favorites__book-title">The Book Eaters <br><span>By Sunyi Dean</span></h4>
+											<p class="favorites__book-text">An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous mind-eater son from tradition and certain death. Complete with dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.</p>
+											<button class="favorites__btn">Buy</button>
+										</div>
+										<div class="favorites__card-pic">
+											<img src="assets/img/book-1.png" alt="The Book Eaters">
+										</div>
 									</div>
 								</div>
+								<div class="favorites__item">
+									<div class="favorites__card">
+										<div class="favorites__card-info">
+											<h3 class="favorites__card-title">Staff Picks</h3>
+											<h4 class="favorites__book-title">Cackle <br><span>By Rachel Harrison</span></h4>
+											<p class="favorites__book-text">Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.</p>
+											<button class="favorites__btn">Buy</button>
+										</div>
+										<div class="favorites__card-pic">
+											<img src="assets/img/book-2.png" alt="Cackle">
+										</div>	
+									</div>
+								</div>
+								<div class="favorites__item">
+									<div class="favorites__card">
+										<div class="favorites__card-info">
+											<h3 class="favorites__card-title">Staff Picks</h3>
+											<h4 class="favorites__book-title">Dante: Poet of the Secular World <br><span>By Erich Auerbach</span></h4>
+											<p class="favorites__book-text">Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.</p>
+											<button class="favorites__btn">Buy</button>
+										</div>
+										<div class="favorites__card-pic">
+											<img src="assets/img/book-3.png" alt="Poet of the Secular World">
+										</div>	
+									</div>
+								</div>
+								<div class="favorites__item">
+									<div class="favorites__card">
+										<div class="favorites__card-info">
+											<h3 class="favorites__card-title">Staff Picks</h3>
+											<h4 class="favorites__book-title">The Last Queen <br><span>By Clive Irving</span></h4>
+											<p class="favorites__book-text">A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.</p>
+											<button class="favorites__btn favorites__btn_dis" type="button" disabled>Own</button>
+										</div>
+										<div class="favorites__card-pic">
+											<img src="assets/img/book-4.png" alt="The Last Queen">
+										</div>
+									</div>
+								</div>	
 							</div>
 						</div>
-
 						<div class="favorites__spring cards-hidden">
 							<div class="favorites__cards">
 								<div class="favorites__card">
@@ -300,75 +320,79 @@
 						In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly conversation. You can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and also you can try desserts from bakery.
 					</p>
 					<div class="coffeshop__menu">
-						<div class="coffeshop__drinks menu-coffeshop">
-							<h3 class="menu-coffeshop__title">Coffee & Tea</h3>
-							<ul class="menu-coffeshop__list">
-								<li class="menu-coffeshop__item">
-									<p class="menu-coffeshop__name menu-coffeshop__name_drink">Cold Brew Coffee</p>
-									<div class="menu-coffeshop__line menu-coffeshop__line_drink"></div>
-									<p class="menu-coffeshop__price">$3</p>
-								</li>
-								<li class="menu-coffeshop__item">
-									<p class="menu-coffeshop__name menu-coffeshop__name_drink">French Press Pot</p>
-									<div class="menu-coffeshop__line menu-coffeshop__line_drink"></div>
-									<p class="menu-coffeshop__price">$5</p>
-								</li>
-								<li class="menu-coffeshop__item">
-									<p class="menu-coffeshop__name menu-coffeshop__name_drink">Espresso</p>
-									<div class="menu-coffeshop__line menu-coffeshop__line_drink"></div>
-									<p class="menu-coffeshop__price">$2</p>
-								</li>
-								<li class="menu-coffeshop__item">
-									<p class="menu-coffeshop__name menu-coffeshop__name_drink">Cappuccino</p>
-									<div class="menu-coffeshop__line menu-coffeshop__line_drink"></div>
-									<p class="menu-coffeshop__price">$4</p>
-								</li>
-								<li class="menu-coffeshop__item">
-									<p class="menu-coffeshop__name menu-coffeshop__name_drink">Hot tea</p>
-									<div class="menu-coffeshop__line menu-coffeshop__line_drink"></div>
-									<p class="menu-coffeshop__price">$2</p>
-								</li>
-								<li class="menu-coffeshop__item">
-									<p class="menu-coffeshop__name menu-coffeshop__name_drink">Cold tea</p>
-									<div class="menu-coffeshop__line menu-coffeshop__line_drink"></div>
-									<p class="menu-coffeshop__price">$2</p>
-								</li>
-							</ul>
+						<div class="coffeshop__item">
+							<div class="coffeshop__drinks">
+								<h3 class="menu-coffeshop__title">Coffee & Tea</h3>
+								<ul class="menu-coffeshop__list">
+									<li class="menu-coffeshop__item">
+										<p class="menu-coffeshop__name menu-coffeshop__name_drink">Cold Brew Coffee</p>
+										<div class="menu-coffeshop__line menu-coffeshop__line_drink"></div>
+										<p class="menu-coffeshop__price">$3</p>
+									</li>
+									<li class="menu-coffeshop__item">
+										<p class="menu-coffeshop__name menu-coffeshop__name_drink">French Press Pot</p>
+										<div class="menu-coffeshop__line menu-coffeshop__line_drink"></div>
+										<p class="menu-coffeshop__price">$5</p>
+									</li>
+									<li class="menu-coffeshop__item">
+										<p class="menu-coffeshop__name menu-coffeshop__name_drink">Espresso</p>
+										<div class="menu-coffeshop__line menu-coffeshop__line_drink"></div>
+										<p class="menu-coffeshop__price">$2</p>
+									</li>
+									<li class="menu-coffeshop__item">
+										<p class="menu-coffeshop__name menu-coffeshop__name_drink">Cappuccino</p>
+										<div class="menu-coffeshop__line menu-coffeshop__line_drink"></div>
+										<p class="menu-coffeshop__price">$4</p>
+									</li>
+									<li class="menu-coffeshop__item">
+										<p class="menu-coffeshop__name menu-coffeshop__name_drink">Hot tea</p>
+										<div class="menu-coffeshop__line menu-coffeshop__line_drink"></div>
+										<p class="menu-coffeshop__price">$2</p>
+									</li>
+									<li class="menu-coffeshop__item">
+										<p class="menu-coffeshop__name menu-coffeshop__name_drink">Cold tea</p>
+										<div class="menu-coffeshop__line menu-coffeshop__line_drink"></div>
+										<p class="menu-coffeshop__price">$2</p>
+									</li>
+								</ul>
+							</div>
 						</div>
-						<div class="coffeshop__deserts menu-coffeshop">
-							<h3 class="menu-coffeshop__title">Desserts & Cakes</h3>
-							<ul class="menu-coffeshop__list">
-								<li class="menu-coffeshop__item menu-coffeshop__item_desert">
-									<p class="menu-coffeshop__name">Forest Gateau</p>
-									<div class="menu-coffeshop__line"></div>
-									<p class="menu-coffeshop__price">$16</p>
-								</li>
-								<li class="menu-coffeshop__item menu-coffeshop__item_desert">
-									<p class="menu-coffeshop__name">Blue Moon</p>
-									<div class="menu-coffeshop__line"></div>
-									<p class="menu-coffeshop__price">$16</p>
-								</li>
-								<li class="menu-coffeshop__item menu-coffeshop__item_desert">
-									<p class="menu-coffeshop__name">Truffle Cake</p>
-									<div class="menu-coffeshop__line"></div>
-									<p class="menu-coffeshop__price">$15</p>
-								</li>
-								<li class="menu-coffeshop__item menu-coffeshop__item_desert">
-									<p class="menu-coffeshop__name">Chocolate Cake</p>
-									<div class="menu-coffeshop__line"></div>
-									<p class="menu-coffeshop__price">$18</p>
-								</li>
-								<li class="menu-coffeshop__item menu-coffeshop__item_desert">
-									<p class="menu-coffeshop__name">Poet’s Dream Cake</p>
-									<div class="menu-coffeshop__line"></div>
-									<p class="menu-coffeshop__price">$16</p>
-								</li>
-								<li class="menu-coffeshop__item menu-coffeshop__item_desert">
-									<p class="menu-coffeshop__name">Pineapple Cake</p>
-									<div class="menu-coffeshop__line"></div>
-									<p class="menu-coffeshop__price">$14</p>
-								</li>
-							</ul>
+						<div class="coffeshop__item">
+							<div class="coffeshop__deserts">
+								<h3 class="menu-coffeshop__title">Desserts & Cakes</h3>
+								<ul class="menu-coffeshop__list">
+									<li class="menu-coffeshop__item menu-coffeshop__item_desert">
+										<p class="menu-coffeshop__name">Forest Gateau</p>
+										<div class="menu-coffeshop__line"></div>
+										<p class="menu-coffeshop__price">$16</p>
+									</li>
+									<li class="menu-coffeshop__item menu-coffeshop__item_desert">
+										<p class="menu-coffeshop__name">Blue Moon</p>
+										<div class="menu-coffeshop__line"></div>
+										<p class="menu-coffeshop__price">$16</p>
+									</li>
+									<li class="menu-coffeshop__item menu-coffeshop__item_desert">
+										<p class="menu-coffeshop__name">Truffle Cake</p>
+										<div class="menu-coffeshop__line"></div>
+										<p class="menu-coffeshop__price">$15</p>
+									</li>
+									<li class="menu-coffeshop__item menu-coffeshop__item_desert">
+										<p class="menu-coffeshop__name">Chocolate Cake</p>
+										<div class="menu-coffeshop__line"></div>
+										<p class="menu-coffeshop__price">$18</p>
+									</li>
+									<li class="menu-coffeshop__item menu-coffeshop__item_desert">
+										<p class="menu-coffeshop__name">Poet’s Dream Cake</p>
+										<div class="menu-coffeshop__line"></div>
+										<p class="menu-coffeshop__price">$16</p>
+									</li>
+									<li class="menu-coffeshop__item menu-coffeshop__item_desert">
+										<p class="menu-coffeshop__name">Pineapple Cake</p>
+										<div class="menu-coffeshop__line"></div>
+										<p class="menu-coffeshop__price">$14</p>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -416,7 +440,7 @@
 						</div>
 						<div class="librarycard__getcard">
 							<h3 class="librarycard__getcard-title">Get a reader card</h3>
-							<p class="librarycard__getcard-subtitle">You will be able to see a reader card after <br> logging into account or you can register a new account</p>
+							<p class="librarycard__getcard-subtitle">You will be able to see a reader card after logging into account or you can register a new account</p>
 							<div class="librarycard_buttons">
 								<button class="librarycard_button">Sign Up</button>
 								<button class="librarycard_button">Log in</button>

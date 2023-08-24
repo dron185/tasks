@@ -30,7 +30,6 @@ html, body {
 	scroll-behavior: smooth; 
 }
 body {
-	/* font-family: 'Forum', cursive; */
 	font-family: 'Inter', sans-serif;
 	font-weight: 400;
 	color: #000000;
@@ -168,10 +167,8 @@ body {
 		background-color: #0c0c0e;
 		z-index: 100;
 		max-width: 332px;
-		/* height: 100vh; */
 		transform: translateX(100%);
 		transition: transform 0.3s ease-in;
-		/* overflow-y: auto; */
 	}
 
 	.header__menu_active {
@@ -268,15 +265,11 @@ body {
 	display: flex;
 	margin-bottom: 35px;
 	column-gap: 25px;
-
-	
 }
 
 .about__arrow {
 	display: none;
 	cursor: pointer;
-
-	
 }
 
 .about__card-pic {
@@ -988,9 +981,9 @@ body {
 	letter-spacing: 2px;
 }
 
-.footer__bottom-year {
-	/* flex-basis: 39.29%; */
-}
+/* .footer__bottom-year {
+	flex-basis: 39.29%;
+} */
 
 .footer__bottom-rsschool {
 	display: block;

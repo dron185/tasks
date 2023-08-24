@@ -154,10 +154,13 @@ body {
 	transform: rotate(-45deg);
 }
 
+<<<<<<< HEAD
 /* .stop-scroll {
 	overflow: hidden;
 } */
 
+=======
+>>>>>>> acb9ebd90be665a5e861c48baa7553d597e4a601
 @media (max-width: 1024px) {
 	.burger {
 		display: block;
@@ -992,9 +995,15 @@ body {
 	letter-spacing: 2px;
 }
 
+<<<<<<< HEAD
 /* .footer__bottom-year {
 	flex-basis: 39.29%;
 } */
+=======
+.footer__bottom-year {
+	/* flex-basis: 39.29%; */
+}
+>>>>>>> acb9ebd90be665a5e861c48baa7553d597e4a601
 
 .footer__bottom-rsschool {
 	display: block;

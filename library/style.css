@@ -154,13 +154,10 @@ body {
 	transform: rotate(-45deg);
 }
 
-<<<<<<< HEAD
 /* .stop-scroll {
 	overflow: hidden;
 } */
 
-=======
->>>>>>> acb9ebd90be665a5e861c48baa7553d597e4a601
 @media (max-width: 1024px) {
 	.burger {
 		display: block;
@@ -271,26 +268,42 @@ body {
 	text-align: center;
 }
 
-.about__cards {
-	display: flex;
-	margin-bottom: 35px;
-	column-gap: 25px;
+.about__arrow_left, .about__arrow_right, .about__carousel {
+	display: inline-block;
+	vertical-align: middle;
+}
 
-	
+.about__carousel {
+	max-width: 1400px;
+	overflow: hidden;
+}
+
+.about__cards {
+	position: relative;
+	display: flex;
+	column-gap: 25px;
+	margin-bottom: 35px;
+	left: 0;
+	transition: all 1s;
 }
 
 .about__arrow {
 	display: none;
-	cursor: pointer;
+	cursor: pointer;	
+}
 
-	
+.about__card {
+	max-width: 450px;
+	flex: 1 0 33.33%;
 }
 
 .about__card-pic {
-	max-width: 100%;
+	display: block;
+	cursor: pointer;
+	max-width:100%;
 }
 
-.about__carousel {
+.about__radio {
 	display: flex;
 	justify-content: center;
 }
@@ -337,31 +350,40 @@ body {
 	background-color: #bb945f;
 }
 
+
 @media (max-width: 1024px) {
-	.about__cards {
+	.about__carousel-container {
+		display: flex;
 		justify-content: center;
 	}
-
-	.about__card_third {
-		display: none;
+	.about__carousel {
+		max-width: 925px;
 	}
-
+	.about__card {
+		flex: 1 0 50%;
+	}
 	.about__radio-button_fourth {
 		display: block;
 	}
 }
 
 @media (max-width: 768px) {
-	.about__cards {
+	.about__carousel-container {
+		display: flex;
+		justify-content: center;
 		column-gap: 58px;
 	}
+	.about__card {
+		flex: 1 0 100%;
+	}
+	
 	.about__arrow {
 		display: inline-block;
-		margin-top: 288.5px;
+		margin: auto 0;
 	}
 
-	.about__card_second {
-		display: none;
+	.about__carousel {
+		max-width: 450px;
 	}
 
 	.about__radio-button_fourth, 
@@ -995,15 +1017,9 @@ body {
 	letter-spacing: 2px;
 }
 
-<<<<<<< HEAD
 /* .footer__bottom-year {
 	flex-basis: 39.29%;
 } */
-=======
-.footer__bottom-year {
-	/* flex-basis: 39.29%; */
-}
->>>>>>> acb9ebd90be665a5e861c48baa7553d597e4a601
 
 .footer__bottom-rsschool {
 	display: block;

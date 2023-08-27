@@ -489,9 +489,18 @@ body {
 	top: 14px;
 }
 
-.cards-hidden {
-	padding-top: 40px;
+.favorites__seasons-container {
+	display: flex;
+	flex-direction: column;
+	row-gap: 40px;
+}
+
+.favorites__season {
 	display: none;
+}
+
+.favorites__season_active {
+	display: block;
 }
 
 .favorites__cards {

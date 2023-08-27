@@ -36,7 +36,7 @@ let position = 0;
 let dotIndex = 0;
 
 const nextSlide = () => {
-	if(position < 950 * 2) {
+	if(position < 1900) {
 		position += 475;
 		dotIndex++;
 	} else {
@@ -79,4 +79,28 @@ dots.forEach((dot, index) => {
 	})
 });
 
+// ----------------- Favorites slider ----------------------------
 
+const tabs = document.querySelectorAll('.favorites__season-radio');
+const seasonBooks = document.querySelectorAll('.favorites__season');
+const favoritesButton = document.querySelectorAll('.favorites__button');
+
+for( let i = 0; i < tabs.length; i++ ) {
+	tabs[i].addEventListener('click', () => {
+
+		// удаляем атрибут
+		for(let tab of favoritesButton) {
+			tab.removeAttribute('checked')
+		}
+		// добавляем текущий класс
+		favoritesButton[i].setAttribute('checked', 'checked');
+
+		// удаляем класс
+		for(let book of seasonBooks) {
+			book.classList.remove('favorites__season_active');
+		}
+		// добавляем текущий класс
+		seasonBooks[i].classList.add('favorites__season_active');
+
+	});
+}

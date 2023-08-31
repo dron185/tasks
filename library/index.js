@@ -92,8 +92,14 @@ for( let i = 0; i < tabs.length; i++ ) {
 		for(let tab of favoritesButton) {
 			tab.removeAttribute('checked')
 		}
-		// добавляем текущий класс
+		// добавляем текущий атрибут
 		favoritesButton[i].setAttribute('checked', 'checked');
+
+		// fade out
+		for(let book of seasonBooks) {
+			book.classList.add('fadeout');
+		}
+		seasonBooks[i].classList.remove('fadeout');
 
 		// удаляем класс
 		for(let book of seasonBooks) {
@@ -101,6 +107,14 @@ for( let i = 0; i < tabs.length; i++ ) {
 		}
 		// добавляем текущий класс
 		seasonBooks[i].classList.add('favorites__season_active');
-
+	
+		// fade in
+		for(let book of seasonBooks) {
+			book.classList.remove('fadein');
+		}
+		seasonBooks[i].classList.add('fadein');
+		
 	});
 }
+
+

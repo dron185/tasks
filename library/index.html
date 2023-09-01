@@ -34,12 +34,45 @@
 						</li>
 					</ul>
 				</nav>
-				<div class="header__icon">
-					<img src="assets/svg/icon-header.svg" alt="Profile-icon">
+				<div class="header__profile">
+					<div class="header__icon">
+						<img src="assets/svg/icon-header.svg" alt="Profile-icon">
+					</div>
+					<div class="authorize-menu">
+						<h4 class="authorize-menu__title">Profile</h4>
+						<ul class="authorize-menu__items">
+							<li class="authorize-menu__item">Log In</li>
+							<li class="authorize-menu__item" id="authorize-register">Register</li>
+						</ul>
+					</div>
+					<div class="modal" id="modal">
+						<div class="modal__register">
+							<button class="modal__close-btn" id="close-modal"><img src="assets/svg/close-btn.svg" alt="cross"></button>
+							<h4 class="modal__title">Register</h4>
+							<form action="#" method="post" class="modal__form">
+								<fieldset class="modal__inputs">
+									<label for="first-name" class="modal__label">First name</label>
+									<input type="text" class="modal__input" id="first-name">
+									<label for="last-name" class="modal__label">Last name</label>
+									<input type="text" class="modal__input" id="last-name">
+									<label for="email" class="modal__label">E-mail</label>
+									<input type="text" class="modal__input" id="email">
+									<label for="password" class="modal__label">Password</label>
+									<input type="text" class="modal__input" id="password">
+								</fieldset>
+								<button class="modal__button btn">Sign Up</button>
+								<div class="modal__account">
+									<div class="modal__have-account">Already have an account?</div>
+									<a href="#" class="modal__login">Login</a>
+								</div>
+							</form>
+						</div>
+					</div>
 				</div>
 				<div class="burger">
 					<span class="burger__line"></span>
 				</div>
+				
 			</div>
 		</header>
 		<main class="main">
@@ -128,7 +161,7 @@
 												<h3 class="favorites__card-title">Staff Picks</h3>
 												<h4 class="favorites__book-title">The Book Eaters <br><span>By Sunyi Dean</span></h4>
 												<p class="favorites__book-text">An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous mind-eater son from tradition and certain death. Complete with dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.</p>
-												<button class="favorites__btn">Buy</button>
+												<button class="favorites__btn btn">Buy</button>
 											</div>
 											<div class="favorites__card-pic">
 												<img src="assets/img/book-1.png" alt="The Book Eaters">
@@ -141,7 +174,7 @@
 												<h3 class="favorites__card-title">Staff Picks</h3>
 												<h4 class="favorites__book-title">Cackle <br><span>By Rachel Harrison</span></h4>
 												<p class="favorites__book-text">Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.</p>
-												<button class="favorites__btn">Buy</button>
+												<button class="favorites__btn btn">Buy</button>
 											</div>
 											<div class="favorites__card-pic">
 												<img src="assets/img/book-2.png" alt="Cackle">
@@ -154,7 +187,7 @@
 												<h3 class="favorites__card-title">Staff Picks</h3>
 												<h4 class="favorites__book-title">Dante: Poet of the Secular World <br><span>By Erich Auerbach</span></h4>
 												<p class="favorites__book-text">Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.</p>
-												<button class="favorites__btn">Buy</button>
+												<button class="favorites__btn btn">Buy</button>
 											</div>
 											<div class="favorites__card-pic">
 												<img src="assets/img/book-3.png" alt="Poet of the Secular World">
@@ -167,7 +200,8 @@
 												<h3 class="favorites__card-title">Staff Picks</h3>
 												<h4 class="favorites__book-title">The Last Queen <br><span>By Clive Irving</span></h4>
 												<p class="favorites__book-text">A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.</p>
-												<button class="favorites__btn favorites__btn_dis" type="button" disabled>Own</button>
+												<button class="favorites__btn btn">Buy</button>
+												<!-- <button class="favorites__btn btn btn_dis" type="button" disabled>Own</button> -->
 											</div>
 											<div class="favorites__card-pic">
 												<img src="assets/img/book-4.png" alt="The Last Queen">
@@ -184,7 +218,7 @@
 												<h3 class="favorites__card-title">Staff Picks</h3>
 												<h4 class="favorites__book-title">The Body <br><span>By Stephen King</span></h4>
 												<p class="favorites__book-text">Powerful novel that takes you back to a nostalgic time, exploring both the beauty and danger and loss of innocence that is youth.</p>
-												<button class="favorites__btn" type="button">Buy</button>
+												<button class="favorites__btn btn" type="button">Buy</button>
 											</div>
 											<div class="favorites__card-pic">
 												<img src="assets/img/book-5.png" alt="The Body">
@@ -197,7 +231,7 @@
 												<h3 class="favorites__card-title">Staff Picks</h3>
 												<h4 class="favorites__book-title">Carry: A Memoir of Survival on Stolen Land <br><span>By Toni Jenson</span></h4>
 												<p class="favorites__book-text">This memoir about the author's relationship with gun violence feels both expansive and intimate, resulting in a lyrical indictment of the way things are.</p>
-												<button class="favorites__btn" type="button">Buy</button>
+												<button class="favorites__btn btn" type="button">Buy</button>
 											</div>
 											<div class="favorites__card-pic">
 												<img src="assets/img/book-6.png" alt="A Memoir of Survival">
@@ -210,7 +244,7 @@
 												<h3 class="favorites__card-title">Staff Picks</h3>
 												<h4 class="favorites__book-title">Days of Distraction <br><span>By Alexandra Chang</span></h4>
 												<p class="favorites__book-text">A sardonic view of Silicon Valley culture, a meditation on race, and a journal of displacement and belonging, all in one form-defying package of spare prose.</p>
-												<button class="favorites__btn">Buy</button>
+												<button class="favorites__btn btn">Buy</button>
 											</div>
 											<div class="favorites__card-pic">
 												<img src="assets/img/book-7.png" alt="Days of Distraction">
@@ -223,7 +257,7 @@
 												<h3 class="favorites__card-title">Staff Picks</h3>
 												<h4 class="favorites__book-title">Dominicana <br><span>By Angie Cruz</span></h4>
 												<p class="favorites__book-text">A fascinating story of a teenage girl who marries a man twice her age with the promise to bring her to America. Her marriage is an opportunity for her family to eventually immigrate. For fans of Isabel Allende and Julia Alvarez.</p>
-												<button class="favorites__btn favorites__btn_dis">Own</button>
+												<button class="favorites__btn btn btn_dis">Own</button>
 											</div>
 											<div class="favorites__card-pic">
 												<img src="assets/img/book-8.png" alt="Dominicana">
@@ -240,7 +274,7 @@
 												<h3 class="favorites__card-title">Staff Picks</h3>
 												<h4 class="favorites__book-title">Crude: A Memoir <br><span>By Pablo Fajardo & ​​Sophie Tardy-Joubert</span></h4>
 												<p class="favorites__book-text">Drawing and color by Damien Roudeau | This book illustrates the struggles of a group of indigenous Ecuadoreans as they try to sue the ChevronTexaco company for damage their oil fields did to the Amazon and her people</p>
-												<button class="favorites__btn" type="button">Buy</button>
+												<button class="favorites__btn btn" type="button">Buy</button>
 											</div>
 											<div class="favorites__card-pic">
 												<img src="assets/img/book-9.png" alt="A Memoir">
@@ -253,7 +287,7 @@
 												<h3 class="favorites__card-title">Staff Picks</h3>
 												<h4 class="favorites__book-title">Let My People Go Surfing <br><span>By Yvon Chouinard</span></h4>
 												<p class="favorites__book-text">Chouinard—climber, businessman, environmentalist—shares tales of courage and persistence from his experience of founding and leading Patagonia, Inc. Full title: Let My People Go Surfing: The Education of a Reluctant Businessman, Including 10 More Years of Business Unusual.</p>
-												<button class="favorites__btn" type="button">Buy</button>
+												<button class="favorites__btn btn" type="button">Buy</button>
 											</div>
 											<div class="favorites__card-pic">
 												<img src="assets/img/book-10.png" alt="Let My People Go Surfing">
@@ -266,7 +300,7 @@
 												<h3 class="favorites__card-title">Staff Picks</h3>
 												<h4 class="favorites__book-title">The Octopus Museum: Poems<br><span>By Brenda Shaughnessy</span></h4>
 												<p class="favorites__book-text">This collection of bold and scathingly beautiful feminist poems imagines what comes after our current age of environmental destruction, racism, sexism, and divisive politics.</p>
-												<button class="favorites__btn">Buy</button>
+												<button class="favorites__btn btn">Buy</button>
 											</div>
 											<div class="favorites__card-pic">
 												<img src="assets/img/book-11.png" alt="The Octopus Museum">
@@ -279,7 +313,7 @@
 												<h3 class="favorites__card-title">Staff Picks</h3>
 												<h4 class="favorites__book-title">Shark Dialogues: A Novel <br><span>By Kiana Davenport</span></h4>
 												<p class="favorites__book-text">An epic saga of seven generations of one family encompasses the tumultuous history of Hawaii as a Hawaiian woman gathers her four granddaughters together in an erotic tale of villains and dreamers, queens and revolutionaries, lepers and healers.</p>
-												<button class="favorites__btn">Buy</button>
+												<button class="favorites__btn btn">Buy</button>
 											</div>
 											<div class="favorites__card-pic">
 												<img src="assets/img/book-12.png" alt="Shark Dialogues">
@@ -296,7 +330,7 @@
 												<h3 class="favorites__card-title">Staff Picks</h3>
 												<h4 class="favorites__book-title">Casual Conversation <br><span>By Renia White</span></h4>
 												<p class="favorites__book-text">White's impressive debut collection takes readers through and beyond the concepts of conversation and the casual - both what we say to each other and what we don't, examining the possibilities around how we construct and communicate identity. </p>
-												<button class="favorites__btn" type="button">Buy</button>
+												<button class="favorites__btn btn" type="button">Buy</button>
 											</div>
 											<div class="favorites__card-pic">
 												<img src="assets/img/book-13.png" alt="Casual Conversation">
@@ -309,7 +343,7 @@
 												<h3 class="favorites__card-title">Staff Picks</h3>
 												<h4 class="favorites__book-title">The Great Fire <br><span>By Lou Ureneck</span></h4>
 												<p class="favorites__book-text">The harrowing story of an ordinary American and a principled Naval officer who, horrified by the burning of Smyrna, led an extraordinary rescue effort that saved a quarter of a million refugees from the Armenian Genocide</p>
-												<button class="favorites__btn" type="button">Buy</button>
+												<button class="favorites__btn btn" type="button">Buy</button>
 											</div>
 											<div class="favorites__card-pic">
 												<img src="assets/img/book-14.png" alt="The Great Fire">
@@ -323,7 +357,7 @@
 												<h4 class="favorites__book-title">Rickey: The Life and Legend
 													<br><span>By Howard Bryant</span></h4>
 												<p class="favorites__book-text">With the fall rolling around, one can't help but think of baseball's postseason coming up! And what better way to prepare for it than reading the biography of one of the game's all-time greatest performers, the Man of Steal, Rickey Henderson?</p>
-												<button class="favorites__btn">Buy</button>
+												<button class="favorites__btn btn">Buy</button>
 											</div>
 											<div class="favorites__card-pic">
 												<img src="assets/img/book-15.png" alt="The Life and Legend">
@@ -336,7 +370,7 @@
 												<h3 class="favorites__card-title">Staff Picks</h3>
 												<h4 class="favorites__book-title">Slug: And Other Stories <br><span>By Megan Milks</span></h4>
 												<p class="favorites__book-text">Exes Tegan and Sara find themselves chained together by hairballs of codependency. A father and child experience the shared trauma of giving birth to gods from their wounds.</p>
-												<button class="favorites__btn">Buy</button>
+												<button class="favorites__btn btn">Buy</button>
 											</div>
 											<div class="favorites__card-pic">
 												<img src="assets/img/book-16.png" alt="Slug: And Other Stories">
@@ -478,7 +512,7 @@
 							<h3 class="librarycard__getcard-title">Get a reader card</h3>
 							<p class="librarycard__getcard-subtitle">You will be able to see a reader card after logging into account or you can register a new account</p>
 							<div class="librarycard_buttons">
-								<button class="librarycard_button">Sign Up</button>
+								<button class="librarycard_button" id="librarycard-register">Sign Up</button>
 								<button class="librarycard_button">Log in</button>
 							</div>
 						</div>

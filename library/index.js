@@ -118,3 +118,35 @@ for( let i = 0; i < tabs.length; i++ ) {
 }
 
 
+// ----------------- Registration ----------------------------
+
+(function () {
+	const icon = document.querySelector('.header__icon');
+	const autorize = document.querySelector('.authorize-menu');
+
+	// open/closed autorization meny
+	icon.addEventListener('click', () => {
+		autorize.classList.toggle('authorize-menu_active');
+	});
+}());
+
+// open modal registration
+document.getElementById('authorize-register').addEventListener('click', function () {
+	document.getElementById('modal').classList.add('open')
+})
+
+document.getElementById('librarycard-register').addEventListener('click', function () {
+	document.getElementById('modal').classList.add('open')
+})
+
+// close modal registration
+document.getElementById('close-modal').addEventListener('click', function () {
+	document.getElementById('modal').classList.remove('open')
+})
+
+// close modal registration on click 'escape'
+window.addEventListener('keydown', (e) => {
+	if (e.key === 'Escape') {
+		document.getElementById('modal').classList.remove('open')
+	}
+});

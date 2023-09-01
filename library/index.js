@@ -150,3 +150,18 @@ window.addEventListener('keydown', (e) => {
 		document.getElementById('modal').classList.remove('open')
 	}
 });
+
+
+// close modal registration by clicking outside it
+document.querySelector('#modal .modal__register').addEventListener('click', (event) => {
+	event._isClick = true;
+	console.log('klick iside the block');
+})
+
+document.getElementById('modal').addEventListener('click', (event) => {
+	if (event._isClick) {
+		return
+	};
+	event.currentTarget.classList.remove('open');
+	console.log('klick outside the block');
+})

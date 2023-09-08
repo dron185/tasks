@@ -117,7 +117,6 @@ for( let i = 0; i < tabs.length; i++ ) {
 	});
 }
 
-
 // ----------------- Registration ----------------------------
 
 (function () {
@@ -151,11 +150,10 @@ window.addEventListener('keydown', (e) => {
 	}
 });
 
-
 // close modal registration by clicking outside it
 document.querySelector('#modal .modal__register').addEventListener('click', (event) => {
 	event._isClick = true;
-	console.log('klick iside the block');
+	// console.log('klick iside the block');
 })
 
 document.getElementById('modal').addEventListener('click', (event) => {
@@ -163,5 +161,122 @@ document.getElementById('modal').addEventListener('click', (event) => {
 		return
 	};
 	event.currentTarget.classList.remove('open');
-	console.log('klick outside the block');
+	// console.log('klick outside the block');
 })
+
+
+//-----------------Local storage test---------------------------------
+let userData = {};
+const form = document.querySelector('.modal__form');
+const submit = document.getElementById('modal-button');
+
+const icon = document.querySelector('.header__icon');
+const initial = document.querySelector('.header__initial');
+
+// form validation
+
+// функция для валидации: валидация будет возвращать true или false
+  //  true - валидация прошла успешно, все поля которые мы проверяем - введены
+  //  false - ошибка, что-то не ввели в какое-то поле
+
+function validation(form) {
+
+	function hideError(input) {
+		const parent = input.parentNode;
+
+		if (parent.classList.contains('input-error')) {
+			parent.querySelector('.modal__label_error').remove();
+			parent.classList.remove('input-error');
+		}
+	}
+
+	function showError(input, text) {
+		const parent = input.parentNode;
+		const label = document.createElement('label');
+		label.classList.add('modal__label_error');
+		label.textContent = text;
+		parent.classList.add('input-error');
+		parent.append(label);
+	}
+
+	let result = true;
+
+	const allInputs = form.querySelectorAll('input');
+
+	for (const input of allInputs) {
+
+		hideError(input);
+
+		if (input.value == "") {
+			console.log('fill in the field!');
+			showError(input, 'Fill in the field!');
+			result = false;
+		} 
+	}
+	return result;
+}
+
+form.addEventListener('input', function (event) {
+	userData[event.target.name] = event.target.value;
+});
+
+// привязка к форме события отправки:
+form.addEventListener('submit', function (event) { 
+	event.preventDefault() // отменяем переход, который срабатывает по умолчанию
+
+	if (validation(this) == true) {
+		// генерируем Card Number
+		let cardNumber = (Math.floor(Math.random() * 1000000000)).toString(16).toUpperCase();
+		let number = {
+			userNumber: cardNumber
+		};
+		userData = {...number, ...userData};
+		
+		let usersArray = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [];
+		localStorage.setItem('users', JSON.stringify(usersArray));
+		usersArray.push(userData);
+		localStorage.setItem('users', JSON.stringify(usersArray));
+
+		// const data = JSON.parse(localStorage.getItem('users'));
+		// console.log(data);
+		
+		icon.classList.add('header__icon_hidden');
+		initial.classList.add('header__initial_active');
+		document.getElementById('modal').classList.remove('open');
+		document.querySelector('.authorize-menu').classList.remove('authorize-menu_active');
+		
+		// Меняем меню профиля
+		const autorize = document.querySelector('.authorize-menu');
+		const initialActive = document.querySelector('.header__initial_active');
+		const profile = document.getElementById('authorize-profile');
+		const login = document.getElementById('authorize-login');
+		const register = document.getElementById('authorize-register');
+
+		initialActive.addEventListener('click', () => {
+			autorize.classList.toggle('authorize-menu_active');
+			login.textContent = 'My profile';
+			register.textContent = 'Log Out';
+			
+			profile.textContent = cardNumber;
+		});
+		
+	}
+})
+
+
+
+
+
+
+
+
+
+// (function () {
+// 	const icon = document.querySelector('.header__icon');
+// 	const autorize = document.querySelector('.authorize-menu');
+
+// 	// open/closed autorization meny
+// 	icon.addEventListener('click', () => {
+// 		autorize.classList.toggle('authorize-menu_active');
+// 	});
+// }());

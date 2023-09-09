@@ -233,21 +233,17 @@ form.addEventListener('submit', function (event) {
 		let number = {
 			userNumber: cardNumber
 		};
-		userData = {...number, ...userData};
+		Object.assign(userData, number);
 		
 		let usersArray = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [];
 		localStorage.setItem('users', JSON.stringify(usersArray));
 		usersArray.push(userData);
 		localStorage.setItem('users', JSON.stringify(usersArray));
-
-		// const data = JSON.parse(localStorage.getItem('users'));
-		// console.log(data);
 		
 		icon.classList.add('header__icon_hidden');
 		initial.classList.add('header__initial_active');
 		document.getElementById('modal').classList.remove('open');
 		document.querySelector('.authorize-menu').classList.remove('authorize-menu_active');
-
 
 		// добавляем атрибут title:
 		const firstName = document.getElementById('first-name');
@@ -260,35 +256,10 @@ form.addEventListener('submit', function (event) {
 		let initialLetters = `${(firstName.value)[0]}${(lastName.value)[0]}`;
 		initial.textContent = initialLetters.toUpperCase();
 		
-
-		// Меняем меню профиля
-		const initialActive = document.querySelector('.header__initial_active');
-		// const registered = document.querySelector('.registered-menu');
-		// const profile = document.getElementById('registered-profile');
-		
 		initial.addEventListener('click', () => {
-			// registered.classList.toggle('registered-menu_active');
 			profile.textContent = cardNumber;
 		});
 
-		// const autorize = document.querySelector('.authorize-menu');
-		// const initialActive = document.querySelector('.header__initial_active');
-		// const profile = document.getElementById('registered-profile');
-		// const login = document.getElementById('authorize-login');
-		// const register = document.getElementById('authorize-register');
-
-		// initialActive.addEventListener('click', () => {
-		// 	autorize.classList.toggle('authorize-menu_active');
-		// 	login.textContent = 'My profile';
-		// 	register.textContent = 'Log Out';
-
-		// 	// register.classList.toggle('logout'); // добавляем класс logout  на кнопку Log Out
-			
-		// 	profile.textContent = cardNumber;
-		// });
-		
-
-		
 	}
 })
 
@@ -297,28 +268,10 @@ initial.addEventListener('click', () => {
 });
 
 // Нажимая на кнопку Log Out выходим из состояния авторизации
-		const logout = document.getElementById('logout');
-		logout.addEventListener('click', () => {
-			
-			initial.removeAttribute('title');
-			icon.classList.toggle('header__icon_hidden');
-			registered.classList.toggle('registered-menu_active');
-			initial.classList.toggle('header__initial_active');
-
-			// document.querySelector('.authorize-menu').classList.remove('authorize-menu_active');
-
-		});
-
-
-
-
-
-// (function () {
-// 	const icon = document.querySelector('.header__icon');
-// 	const autorize = document.querySelector('.authorize-menu');
-
-// 	// open/closed autorization meny
-// 	icon.addEventListener('click', () => {
-// 		autorize.classList.toggle('authorize-menu_active');
-// 	});
-// }());
+const logout = document.getElementById('logout');
+logout.addEventListener('click', () => {
+	initial.removeAttribute('title');
+	icon.classList.toggle('header__icon_hidden');
+	registered.classList.toggle('registered-menu_active');
+	initial.classList.toggle('header__initial_active');
+});

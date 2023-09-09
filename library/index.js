@@ -173,6 +173,9 @@ const submit = document.getElementById('modal-button');
 const icon = document.querySelector('.header__icon');
 const initial = document.querySelector('.header__initial');
 
+const registered = document.querySelector('.registered-menu');
+const profile = document.getElementById('registered-profile');
+
 // form validation
 
 // функция для валидации: валидация будет возвращать true или false
@@ -244,28 +247,67 @@ form.addEventListener('submit', function (event) {
 		initial.classList.add('header__initial_active');
 		document.getElementById('modal').classList.remove('open');
 		document.querySelector('.authorize-menu').classList.remove('authorize-menu_active');
-		
-		// Меняем меню профиля
-		const autorize = document.querySelector('.authorize-menu');
-		const initialActive = document.querySelector('.header__initial_active');
-		const profile = document.getElementById('authorize-profile');
-		const login = document.getElementById('authorize-login');
-		const register = document.getElementById('authorize-register');
 
-		initialActive.addEventListener('click', () => {
-			autorize.classList.toggle('authorize-menu_active');
-			login.textContent = 'My profile';
-			register.textContent = 'Log Out';
-			
+
+		// добавляем атрибут title:
+		const firstName = document.getElementById('first-name');
+		const lastName = document.getElementById('last-name');
+
+		let initialTitle = `${firstName.value} ${lastName.value}`;
+		initial.setAttribute('title', initialTitle);
+
+		//Иконка пользователя меняется на заглавные буквы имени
+		let initialLetters = `${(firstName.value)[0]}${(lastName.value)[0]}`;
+		initial.textContent = initialLetters.toUpperCase();
+		
+
+		// Меняем меню профиля
+		const initialActive = document.querySelector('.header__initial_active');
+		// const registered = document.querySelector('.registered-menu');
+		// const profile = document.getElementById('registered-profile');
+		
+		initial.addEventListener('click', () => {
+			// registered.classList.toggle('registered-menu_active');
 			profile.textContent = cardNumber;
 		});
+
+		// const autorize = document.querySelector('.authorize-menu');
+		// const initialActive = document.querySelector('.header__initial_active');
+		// const profile = document.getElementById('registered-profile');
+		// const login = document.getElementById('authorize-login');
+		// const register = document.getElementById('authorize-register');
+
+		// initialActive.addEventListener('click', () => {
+		// 	autorize.classList.toggle('authorize-menu_active');
+		// 	login.textContent = 'My profile';
+		// 	register.textContent = 'Log Out';
+
+		// 	// register.classList.toggle('logout'); // добавляем класс logout  на кнопку Log Out
+			
+		// 	profile.textContent = cardNumber;
+		// });
+		
+
 		
 	}
 })
 
+initial.addEventListener('click', () => {
+	registered.classList.toggle('registered-menu_active');
+});
 
+// Нажимая на кнопку Log Out выходим из состояния авторизации
+		const logout = document.getElementById('logout');
+		logout.addEventListener('click', () => {
+			
+			initial.removeAttribute('title');
+			icon.classList.toggle('header__icon_hidden');
+			registered.classList.toggle('registered-menu_active');
+			initial.classList.toggle('header__initial_active');
 
+			// document.querySelector('.authorize-menu').classList.remove('authorize-menu_active');
 
+		});
 
 
 

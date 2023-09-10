@@ -41,7 +41,7 @@
 					<div class="header__initial">
 						AH
 					</div>
-					<div class="authorize-menu">
+					<div class="authorize-menu" id="authorize-menu">
 						<h4 class="authorize-menu__title title-dropmenu">Profile</h4>
 						<ul class="authorize-menu__items items-dropmenu">
 							<li class="authorize-menu__item item-dropmenu" id="authorize-login">Log In</li>
@@ -55,6 +55,31 @@
 							<li class="registered-menu__item item-dropmenu" id="logout">Log Out</li>
 						</ul>
 					</div>
+
+					<div class="modal-log" id="modal-log">
+						<div class="modal__login" id="modal-login">
+							<button class="modal__close-btn" id="close-log"><img src="assets/svg/close-btn.svg" alt="cross"></button>
+							<h4 class="modal__title">Login</h4>
+							<form action="#" method="post" class="modal__form-log">
+								<fieldset class="modal__inputs">
+									<div class="modal__inputs-item">
+										<label for="email" class="modal__label">E-mail or readers card</label>
+										<input autocomplete="off" type="email" name="e-mail" class="modal__input" id="login-email">
+									</div>
+									<div class="modal__inputs-item">
+										<label for="password" class="modal__label">Password</label>
+										<input autocomplete="off" type="password" name="password" class="modal__input" id="login-password" pattern="[0-9A-Za-z]{8,}">
+									</div>
+								</fieldset>
+								<button type="button" class="modal__button btn" id="login-button">Log In</button>
+								<div class="modal__account">
+									<div class="modal__have-account">Don’t have an account?</div>
+									<a href="" class="modal__login-link">Register</a>
+								</div>
+							</form>
+						</div>
+					</div>
+
 					<div class="modal" id="modal">
 						<div class="modal__register" id="modal-register">
 							<button class="modal__close-btn" id="close-modal"><img src="assets/svg/close-btn.svg" alt="cross"></button>
@@ -81,7 +106,7 @@
 								<button type="submit" class="modal__button btn" id="modal-button">Sign Up</button>
 								<div class="modal__account">
 									<div class="modal__have-account">Already have an account?</div>
-									<a href="" class="modal__login">Login</a>
+									<a href="" class="modal__login-link">Login</a>
 								</div>
 							</form>
 						</div>
@@ -530,7 +555,7 @@
 							<p class="librarycard__getcard-subtitle">You will be able to see a reader card after logging into account or you can register a new account</p>
 							<div class="librarycard_buttons">
 								<button class="librarycard_button" id="librarycard-register">Sign Up</button>
-								<button class="librarycard_button">Log in</button>
+								<button class="librarycard_button" id="librarycard-login">Log in</button>
 							</div>
 						</div>
 					</div>

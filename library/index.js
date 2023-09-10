@@ -129,6 +129,43 @@ for( let i = 0; i < tabs.length; i++ ) {
 	});
 }());
 
+
+// close autorization meny by clicking outside it
+
+
+// open modal log-in
+document.getElementById('authorize-login').addEventListener('click', function () {
+	document.getElementById('modal-log').classList.add('open')
+})
+
+document.getElementById('librarycard-login').addEventListener('click', function () {
+	document.getElementById('modal-log').classList.add('open')
+})
+
+// close modal log-in
+document.getElementById('close-log').addEventListener('click', function () {
+	document.getElementById('modal-log').classList.remove('open')
+})
+
+// close modal log-in on click 'escape'
+window.addEventListener('keydown', (e) => {
+	if (e.key === 'Escape') {
+		document.getElementById('modal-log').classList.remove('open')
+	}
+});
+
+// close modal login by clicking outside it
+document.querySelector('#modal-log .modal__login').addEventListener('click', (event) => {
+	event._isClick = true;
+})
+
+document.getElementById('modal-log').addEventListener('click', (event) => {
+	if (event._isClick) {
+		return
+	};
+	event.currentTarget.classList.remove('open');
+})
+
 // open modal registration
 document.getElementById('authorize-register').addEventListener('click', function () {
 	document.getElementById('modal').classList.add('open')
@@ -165,18 +202,14 @@ document.getElementById('modal').addEventListener('click', (event) => {
 })
 
 
-//-----------------Local storage test---------------------------------
+//-----------------Local storage---------------------------------
 let userData = {};
 const form = document.querySelector('.modal__form');
 const submit = document.getElementById('modal-button');
-
 const icon = document.querySelector('.header__icon');
 const initial = document.querySelector('.header__initial');
-
 const registered = document.querySelector('.registered-menu');
 const profile = document.getElementById('registered-profile');
-
-// form validation
 
 // функция для валидации: валидация будет возвращать true или false
   //  true - валидация прошла успешно, все поля которые мы проверяем - введены

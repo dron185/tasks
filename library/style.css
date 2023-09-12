@@ -892,6 +892,13 @@ body {
 	}
 }
 
+/* @media (max-width: 768px) {
+	.favorites__seasons {
+		position: sticky;
+		top: -34px;
+	}
+} */
+
 @media (max-width: 750px) {
 	.favorites__seasons-radio {
 		column-gap: 40px;

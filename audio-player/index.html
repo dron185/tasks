@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Audio-player</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="wrapper">
+		<img src="assets/img/tiger.jpg" alt="Tiger image" class="main__bg">
+		<audio src="assets/audio/Survivor - Eye Of The Tiger.mp3" id="audio"></audio>
+		<header class="header"></header>
+		<main class="main">
+			<div class="main__player-container">
+				<div class="main__player">
+
+					<div class="main__player-top">
+						<img src="assets/img/tiger.jpg" alt="Tiger image">
+					</div>
+					<div class="main__player-bottom">
+						<img onclick="playSong()" src="assets/svg/play.png" alt="play button" class="main__button" id="play-button">
+						<img onclick="stopSong()" src="assets/svg/pause.png" alt="pause button" class="main__button" id="pause-button">
+						
+					</div>
+	
+				</div>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+	<script src="index.js"></script>
+</body>
+</html>

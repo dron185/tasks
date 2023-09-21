@@ -27,11 +27,13 @@ input, button {
 }
 html, body {
 	height: 100%;
-	line-height: 1;	
+	line-height: 1;
 }
-body{
 
+body{
+	font-family: 'Poppins', sans-serif;
 }
+
 .wrapper {
 	/* height: 100vh;
 	width: 100%; */
@@ -56,6 +58,7 @@ body{
 	object-fit: cover;
 	filter: blur(4px) sepia(50%);
 	/* object-position: center; */
+	transition: transform 0.7s ease-in;
 }
 
 .main__player-container {
@@ -63,38 +66,92 @@ body{
 	top: 50%;
 	left: 50%;
 	transform: translateX(-50%) translateY(-50%);
-	
-	/* width: 380px;
-	height: 600px; */
+	width: 400px;
+	height: 600px;
 }
 
 .main__player {
 	display: flex;
 	flex-direction: column;
-	
+	box-shadow: 3px 3px 54px 10px rgba(34, 60, 80, 0.2);
+	height: 100%;
 }
 
 .main__player-top {
-	
+	flex: 1 1 auto;
 }
 
-.main__player-top img {
-	max-width: 100%;
+.main__player-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 	border-radius: 20px 20px 0 0;
 }
 
+.main__player-bottom {
+	padding: 20px;
+	background-color: #0c4966;
+	border-radius: 0 0 20px 20px;
+}
+
+.main__play-song {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
 .main__button {
+	background-image: url(assets/svg/play.png);
+	border-radius: 50%;
 	cursor: pointer;
-	height: 32px;
-	width: 32px;
+	height: 50px;
+	width: 50px;
+	background-size: cover;
 	transition: all 0.3s ease-in;
 }
 
 .main__button:hover {
-	opacity: 0.7;
+	opacity: 0.6;
 }
 
 #play-button {
 
 }
 
+.pause {
+	background-image: url(assets/svg/pause.png);
+}
+
+.button-switch {
+	border-radius: 50%;
+	cursor: pointer;
+	height: 32px;
+	width: 32px;
+	background-size: cover;
+	transition: all 0.3s ease-in;
+}
+
+.button-switch:hover {
+	opacity: 0.6;
+}
+
+.main__button-next {
+	background-image: url(assets/svg/fast-forward.png);
+}
+
+.main__button-prev {
+	background-image: url(assets/svg/fast-backward.png);
+}
+
+.main__band-name {
+	margin-bottom: 8px;
+	font-size: 24px;
+	font-style: italic;
+	font-weight: 700;
+	color: rgb(228, 223, 202)
+}
+
+.main__song-name {
+	font-size: 18px;
+	color: rgb(228, 223, 202)
+}

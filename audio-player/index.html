@@ -4,24 +4,41 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Audio-player</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="shortcut icon" href="assets/svg/favicon-16x16.png" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<div class="wrapper">
 		<img src="assets/img/tiger.jpg" alt="Tiger image" class="main__bg">
-		<audio src="assets/audio/Survivor - Eye Of The Tiger.mp3" id="audio"></audio>
+		<audio src="assets/audio/audio-1.mp3" id="audio"></audio>
 		<header class="header"></header>
 		<main class="main">
 			<div class="main__player-container">
 				<div class="main__player">
 
 					<div class="main__player-top">
-						<img src="assets/img/tiger.jpg" alt="Tiger image">
+						<img src="assets/img/tiger.jpg" alt="Tiger image" class="main__player-img">
 					</div>
 					<div class="main__player-bottom">
-						<img onclick="playSong()" src="assets/svg/play.png" alt="play button" class="main__button" id="play-button">
-						<img onclick="stopSong()" src="assets/svg/pause.png" alt="pause button" class="main__button" id="pause-button">
-						
+						<div class="main__play-song">
+							<button onclick="playSong()" class="main__button" id="play-button"></button>
+							<div class="main__song-title">
+								<div class="main__band-name">Survivor</div>
+								<div class="main__song-name">Eye Of The Tiger</div>
+							</div>	
+						</div>
+						<button onclick="playPrev()" class="main__button-prev button-switch"></button>
+						<button onclick="playNext()" class="main__button-next button-switch"></button>
+						<div class="main__volume">
+							<div class="main__volume-number">90</div>
+							<input type="range" min="0" max="100" value="90" onchange="changeVolume()" id="volume">
+						</div>
+						<div class="main__duration">
+							<input type="range" min="0" max="100" value="0" id="bar-duration" onchange="changeDuration()">
+						</div>
 					</div>
 	
 				</div>

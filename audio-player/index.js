@@ -2,6 +2,9 @@ const audio = document.getElementById('audio');
 let isPlay = false;
 const playButton = document.getElementById('play-button');
 
+const progressSlider = document.querySelector('.main__progress-slider');
+const progressBar = document.querySelector('.main__progress-bar');
+
 function playSong() {
 	if (!isPlay) {
 		audio.play();
@@ -23,6 +26,7 @@ const songName = document.querySelector('.main__song-name');
 const bgImage = document.querySelector('.main__bg');
 const playerImage = document.querySelector('.main__player-img');
 let bgImages = ['assets/img/tiger.jpg', 'assets/img/2pac.jpg', 'assets/img/feel.jpg'];
+let collors = ['rgb(243, 123, 10)', 'rgb(109, 108, 108)', 'rgb(112, 39, 161)'];
 
 
 function playNext() {
@@ -38,6 +42,7 @@ function playNext() {
 	playButton.classList.add('pause');
 	bandName.textContent = bandNames[playNumber];
 	songName.textContent = songNames[playNumber];
+	progressSlider.style.backgroundColor = collors[playNumber]; 
 }
 
 function playPrev() {
@@ -53,6 +58,7 @@ function playPrev() {
 	playButton.classList.add('pause');
 	bandName.textContent = bandNames[playNumber];
 	songName.textContent = songNames[playNumber];
+	progressSlider.style.backgroundColor = collors[playNumber];
 }
 
 
@@ -63,11 +69,7 @@ function changeVolume() {
 	audio.volume = volumeCurrent.value / 100; //-----уменьшает звук
 }
 
-
 //change slider position
-const progressSlider = document.querySelector('.main__progress-slider');
-const progressBar = document.querySelector('.main__progress-bar');
-
 
 function changeDuration() {
 	const duration = audio.duration;

@@ -33,11 +33,16 @@
 						<button onclick="playPrev()" class="main__button-prev button-switch"></button>
 						<button onclick="playNext()" class="main__button-next button-switch"></button>
 						<div class="main__volume">
-							<div class="main__volume-number">90</div>
-							<input type="range" min="0" max="100" value="90" onchange="changeVolume()" id="volume">
+							<div class="main__volume-number">70</div>
+							<input type="range" min="0" max="100" value="70" onchange="changeVolume()" id="volume">
 						</div>
-						<div class="main__duration">
-							<input type="range" min="0" max="100" value="0" id="bar-duration" onchange="changeDuration()">
+						<div class="main__progress-bar">
+							<!-- <input type="range" min="0" max="100" value="0" id="progress-bar" onchange="changeDuration()"> -->
+							<div class="main__progress-slider"></div>
+						</div>
+						<div class="main__audio-time">
+							<span class="main__duratiom-time">0:00</span>
+							<span class="main__progress-time">0:00</span>
 						</div>
 					</div>
 	

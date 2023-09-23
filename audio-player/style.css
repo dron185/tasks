@@ -116,7 +116,26 @@ body{
 	background-image: url(assets/svg/pause.png);
 }
 
+.main__band-name {
+	margin-bottom: 8px;
+	font-size: 24px;
+	font-style: italic;
+	font-weight: 700;
+	color: rgb(228, 223, 202);
+}
+
+.main__song-name {
+	font-size: 18px;
+	color: rgb(228, 223, 202);
+}
+
+.maim__switch-volume {
+	display: flex;
+	justify-content: space-between;
+}
+
 .button-switch {
+	margin-right: 15px;
 	border-radius: 50%;
 	cursor: pointer;
 	height: 32px;
@@ -137,17 +156,12 @@ body{
 	background-image: url(assets/svg/fast-backward.png);
 }
 
-.main__band-name {
-	margin-bottom: 8px;
-	font-size: 24px;
-	font-style: italic;
-	font-weight: 700;
-	color: rgb(228, 223, 202)
-}
-
-.main__song-name {
-	font-size: 18px;
-	color: rgb(228, 223, 202)
+.main__volume {
+	display: flex;
+	align-items: center;
+	column-gap: 10px;
+	font-size: 14px;
+	color: rgb(228, 223, 202);
 }
 
 .main__progress-bar {
@@ -165,4 +179,38 @@ body{
 	position: absolute;
 	background-color: rgb(112, 39, 161);
 	height: 100%;
+}
+
+.main__audio-time {
+	display: flex;
+	justify-content: space-between;
+	color: rgb(228, 223, 202);
+}
+/*--------------------FOOTER--------------------*/
+
+.footer {
+	padding: 25px 0;
+	display: flex;
+	column-gap: 50px;
+	align-items: center;
+	justify-content: center;
+	z-index: 10;
+}
+
+.footer__github-img {
+	height: 50px;
+	width: 50px;
+	cursor: pointer;
+}
+
+.footer__year {
+	font-size: 22px;
+	color: rgb(228, 223, 202);
+}
+
+.footer__rsschool-img {
+	height: 50px;
+	background-color: #ffffff;
+	border-radius: 3px;
+	cursor: pointer;
 }

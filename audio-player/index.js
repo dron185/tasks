@@ -1,21 +1,8 @@
 const audio = document.getElementById('audio');
 let isPlay = false;
 const playButton = document.getElementById('play-button');
-
 const progressSlider = document.querySelector('.main__progress-slider');
 const progressBar = document.querySelector('.main__progress-bar');
-
-function playSong() {
-	if (!isPlay) {
-		audio.play();
-		isPlay = true;
-		playButton.classList.add('pause');
-	} else {
-		audio.pause();
-		isPlay = false;
-		playButton.classList.remove('pause');
-	}
-}
 
 let playNumber = 0;
 let songArray = ['./assets/audio/audio-1.mp3', './assets/audio/audio-2.mp3', './assets/audio/audio-3.mp3'];
@@ -28,6 +15,25 @@ const playerImage = document.querySelector('.main__player-img');
 let bgImages = ['assets/img/tiger.jpg', 'assets/img/2pac.jpg', 'assets/img/feel.jpg'];
 let collors = ['rgb(243, 123, 10)', 'rgb(109, 108, 108)', 'rgb(112, 39, 161)'];
 
+
+function playSong() {
+	if (!isPlay) {
+		audio.play();
+		isPlay = true;
+		playButton.classList.add('pause');
+		playerImage.style.transform = 'scale(1.1)';
+
+	} else {
+		audio.pause();
+		isPlay = false;
+		playButton.classList.remove('pause');
+		playerImage.style.transform = 'scale(1)';
+	}
+}
+
+audio.onended = function nextSong() {
+	playNext();
+}
 
 function playNext() {
 	playNumber++;
@@ -42,7 +48,8 @@ function playNext() {
 	playButton.classList.add('pause');
 	bandName.textContent = bandNames[playNumber];
 	songName.textContent = songNames[playNumber];
-	progressSlider.style.backgroundColor = collors[playNumber]; 
+	progressSlider.style.backgroundColor = collors[playNumber];
+	playerImage.style.transform = 'scale(1.1)';
 }
 
 function playPrev() {
@@ -59,8 +66,8 @@ function playPrev() {
 	bandName.textContent = bandNames[playNumber];
 	songName.textContent = songNames[playNumber];
 	progressSlider.style.backgroundColor = collors[playNumber];
+	playerImage.style.transform = 'scale(1.1)';
 }
-
 
 const volumeNumber = document.querySelector('.main__volume-number');
 const volumeCurrent = document.getElementById('volume');
@@ -108,4 +115,18 @@ const formatTime = (time) => {
 		sec = `0${sec}`;
 	}
 	return `${min}:${sec}`;
+}
+
+// volume switch of/on
+
+const volumeButton = document.querySelector('.main__volume-button');
+
+function switchVolume() {
+	if (!audio.muted) {
+		audio.muted = true;
+		volumeButton.classList.add('mute');
+	} else {
+		audio.muted = false;
+		volumeButton.classList.remove('mute');
+	}
 }

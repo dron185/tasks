@@ -30,13 +30,14 @@
 								<div class="main__song-name">Eye Of The Tiger</div>
 							</div>	
 						</div>
-						<div class="maim__switch-volume">
+						<div class="main__switch-volume">
 							<div class="main__switch">
 								<button onclick="playPrev()" class="main__button-prev button-switch"></button>
 								<button onclick="playNext()" class="main__button-next button-switch"></button>
 							</div>
 							<div class="main__volume">
-								<input type="range" min="0" max="100" value="70" onchange="changeVolume()" id="volume">
+								<button onclick="switchVolume()" class="main__volume-button"></button>
+								<input type="range" min="0" max="100" value="50" onchange="changeVolume()" id="volume">
 								<div class="main__volume-number">70</div>
 							</div>
 						</div>

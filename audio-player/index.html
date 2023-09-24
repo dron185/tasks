@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Audio-player</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="shortcut icon" href="assets/svg/favicon-16x16.png" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="wrapper">
+		<img src="assets/img/tiger.jpg" alt="Tiger image" class="main__bg">
+		<audio src="assets/audio/audio-1.mp3" id="audio"></audio>
+		<header class="header"></header>
+		<main class="main">
+			<div class="main__player-container">
+				<div class="main__player">
+
+					<div class="main__player-top">
+						<img src="assets/img/tiger.jpg" alt="Tiger image" class="main__player-img">
+					</div>
+					<div class="main__player-bottom">
+						<div class="main__play-song">
+							<button onclick="playSong()" class="main__button" id="play-button"></button>
+							<div class="main__song-title">
+								<div class="main__band-name">Survivor</div>
+								<div class="main__song-name">Eye Of The Tiger</div>
+							</div>	
+						</div>
+						<div class="main__switch-volume">
+							<div class="main__switch">
+								<button onclick="playPrev()" class="main__button-prev button-switch"></button>
+								<button onclick="playNext()" class="main__button-next button-switch"></button>
+							</div>
+							<div class="main__volume">
+								<button onclick="switchVolume()" class="main__volume-button"></button>
+								<input type="range" min="0" max="100" value="50" onchange="changeVolume()" id="volume">
+								<div class="main__volume-number">70</div>
+							</div>
+						</div>
+						<div class="main__progress-bar">
+							<div class="main__progress-slider"></div>
+						</div>
+						<div class="main__audio-time">
+							<span class="main__duratiom-time">0:00</span>
+							<span class="main__progress-time">0:00</span>
+						</div>
+					</div>
+	
+				</div>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="footer__github">
+				<a href="https://github.com/dron185" class="footer__github-link"><img src="assets/svg/github_logo_icon.svg" alt="github" class="footer__github-img"></a>
+			</div>
+			<div class="footer__year">2023</div>
+			<div class="footer__logo">
+				<a href="https://rs.school/js-stage0/" class="footer__rsschool-link"><img src="assets/svg/rs_school_js.svg" alt="rs-school" class="footer__rsschool-img"></a>	
+			</div>
+		</footer>
+	</div>
+	<script src="index.js"></script>
+</body>
+</html>

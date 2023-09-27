@@ -3,13 +3,37 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="icon" href="assets/img/favicon-16x16.png">
 	<link rel="stylesheet" href="style.css">
 	<title>image-gallery</title>
 </head>
 <body>
-	<header class="header"></header>
-	<main class="main"></main>
-	<footer class="footer"></footer>
+	<div class="wrapper">
+		<header class="header">
+			<div class="container">
+				<div class="header__box">
+					<h1 class="header__title">Image-gallery API</h1>
+					<div class="header__search">
+						<input type="text" name="search" id="search" placeholder="Search..." class="header__input">
+						<button type="button" class="header__search-btn"><img src="assets/svg/magnifier.svg" alt="magnifier"></button>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<div class="container">
+				<div class="main__gallery gallery">
+					<!-- <div class="gallery__box"><img class="gallery__img" src="" alt=""></div> -->
+					<div class="gallery__box"></div>
+					<div class="gallery__box"></div>
+				</div>
+			</div>	
+		</main>
+		<footer class="footer">123</footer>
+	</div>
 	<script src="index.js"></script>
 </body>
 </html>

@@ -1,25 +1,34 @@
-const button = document.querySelector('.header__search-btn');
+// const button = document.querySelector('.header__search-btn');
 const search = document.getElementById('search');
-const url = 'https://api.unsplash.com/search/photos?query=spring&client_id=Xag3asSOqMZBOXZBV9SEB3rYrmIYSBY46IMEjTzLDv8';
+
+// const accessKey = 'Xag3asSOqMZBOXZBV9SEB3rYrmIYSBY46IMEjTzLDv8';
+
+
+const url = 
+'https://api.unsplash.com/search/photos?query=spring&per_page=30&client_id=Xag3asSOqMZBOXZBV9SEB3rYrmIYSBY46IMEjTzLDv8';
 const gallery = document.querySelector('.gallery');
 
-async function getData() {
-	const response = await fetch(url);
+const apiSearch = 'https://api.unsplash.com/search/photos?query=';
+
+async function getData(urlApi) {
+	const response = await fetch(urlApi);
 	const data = await response.json();
 	console.log(data);
 
 	const results = data.results;
-	console.log(results);
+	// console.log(results);
 
 	for (let item of results.values()) {
 		let imgUrl = item.urls.regular;
-		console.log(imgUrl);
+		// console.log(imgUrl);
 		showData(imgUrl);
 	}
 }
-getData();
+getData(url);
 
 function showData(imgUrl) {
+	
+
 	const img = document.createElement('img');
 	img.classList.add('gallery__img');
 	img.alt = `image`;
@@ -30,3 +39,16 @@ function showData(imgUrl) {
 	gallery.append(imgBox);
 }
 
+
+const form = document.querySelector('.header__search');
+
+form.addEventListener('submit', function (event) {
+	event.preventDefault();
+
+	const apiSearchUrl = `${apiSearch}${search.value}${'&per_page=30&client_id=Xag3asSOqMZBOXZBV9SEB3rYrmIYSBY46IMEjTzLDv8'}`;
+	console.log(apiSearchUrl)
+	if (search.value) {
+		gallery.innerHTML = "";
+		getData(apiSearchUrl);
+	}
+})

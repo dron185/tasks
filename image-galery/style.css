@@ -30,7 +30,8 @@ html, body {
 	line-height: 1;
 	font-family: 'Mulish', sans-serif;
 	/* background-color: #fafafa; */
-	background-color: #edf0ed;
+	/* background-color: #edf0ed; */
+	background-color: bisque;
 }
 
 .wrapper {
@@ -104,24 +105,20 @@ html, body {
 	flex: 1 1 auto;
 }
 
-img {
-	height: 100%;
-	/* width: 354px;
-	height: 219px; */
-	border-radius: 5px;
-}
-
 .main__gallery {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
-	margin: 0 -15px;
+	margin: 0 -10px;
 }
 
 .gallery__box {
 	flex: 0 1 33.333%;
-	background-color: bisque;
-	height: 220px;
-	padding: 0 15px;
-	/* background-image: url(); */
+	padding: 10px;
+}
+
+.gallery__img {
+	width: 100%;
+	height: 250px;
+	object-fit: cover;
+	border-radius: 5px;
 }

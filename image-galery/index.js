@@ -1,4 +1,3 @@
-// const button = document.querySelector('.header__search-btn');
 const search = document.getElementById('search');
 const cross = document.querySelector('.header__cross');
 // const accessKey = 'Xag3asSOqMZBOXZBV9SEB3rYrmIYSBY46IMEjTzLDv8';
@@ -13,8 +12,7 @@ const apiSearch = 'https://api.unsplash.com/search/photos?query=';
 async function getData(urlApi) {
 	const response = await fetch(urlApi);
 	const data = await response.json();
-	console.log(data);
-
+	// console.log(data);
 	const results = data.results;
 	// console.log(results);
 
@@ -35,6 +33,11 @@ function showData(imgUrl) {
 	imgBox.append(img);
 	img.src = imgUrl;
 	gallery.append(imgBox);
+
+	img.addEventListener('click', () => {
+		// console.log(imgUrl)
+		window.open(imgUrl);
+	})
 }
 
 function inputChange() {

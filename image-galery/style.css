@@ -58,7 +58,7 @@ html, body {
 	position: relative;
 	font-size: 36px;
 	font-weight: 700;
-	color: rgb(80, 27, 116);
+	color: rgb(57, 109, 57);
 }
 
 .header__title::after {
@@ -75,7 +75,7 @@ html, body {
 	position: relative;
 	display: flex;
 	width: 300px;
-	margin-left: 20px;
+	margin-left: 71px;
 }
 
 .header__input {
@@ -83,7 +83,7 @@ html, body {
 	width: 100%;
 	padding: 0 15px;
 	border-radius: 7px 0 0 7px;
-	border: 2px solid rgb(80, 27, 116);
+	border: 2px solid rgb(57, 109, 57);
 	border-right: none;
 	background-color: #ffffff;
 	outline: none;
@@ -95,14 +95,14 @@ html, body {
 	display: flex;
 	align-items: center;
 	border-radius: 0 7px 7px 0;
-	border: 2px solid rgb(80, 27, 116);
+	border: 2px solid rgb(57, 109, 57);
 	cursor: pointer;
-	background-color: rgb(205, 197, 212);
+	background-color: rgb(197, 212, 197);
 	transition: all 0.3s ease-in;
 }
 
 .header__search-btn:hover {
-	background-color: rgba(205, 197, 212, 0.6);
+	background-color: rgba(89, 133, 89, 0.6);
 }
 
 .header__search-btn img {
@@ -148,14 +148,17 @@ html, body {
 	left: 0;
 	
 } */
+.header__input {
+	color: green;
+}
 
 .header__cross {
 	position: absolute;
-	left: 240px;
+	left: 235px;
 	top: 50%;
 	transform: translateY(-50%);
-	width: 17px;
-	height: 17px;
+	width: 20px;
+	height: 20px;
 	cursor: pointer;
 }
 
@@ -167,9 +170,9 @@ html, body {
 	position: absolute;
 	content: '';
 	top: 50%;
-	width: 17px;
-	height: 1px;
-	background-color: black;
+	width: 20px;
+	height: 2px;
+	background-color: green;
 }
 
 .header__cross::before {
@@ -199,14 +202,33 @@ html, body {
 .footer__year {
 	font-size: 26px;
    font-weight: 700;
-   color: rgb(80, 27, 116);
+   color: rgb(57, 109, 57);
 }
 
-.footer__rsschool {
-	
-}
 .footer__rsschool-img {
 	height: 50px;
 }
 
+/*--------Media---------*/
+@media (max-width: 1049px) {
+	.gallery__box {
+		flex: 0 1 50%;
+	}
+}
+
+@media (max-width: 768px) {
+	.gallery__box {
+		flex: 0 1 100%;
+	}
+	.header__box {
+		padding-top: 20px;
+		flex-direction: column;
+	}
+	.header__box >* {
+		margin-bottom: 20px;
+	}
+	.header__search {
+		margin-left: 0;
+	}
+}
 

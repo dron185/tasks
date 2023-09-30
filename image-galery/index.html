@@ -17,7 +17,8 @@
 				<div class="header__box">
 					<h1 class="header__title">Image-gallery API</h1>
 					<form method="post" class="header__search">
-						<input autocomplete="off" type="text" name="search" id="search" placeholder="Search..." class="header__input">
+						<input autocomplete="off" autofocus type="text" name="search" id="search" placeholder="Search..." class="header__input" oninput="inputChange()">
+						<span class="header__cross header__cross_hidden" onclick="clearSearch()"></span>
 						<button type="submit" class="header__search-btn"><img src="assets/svg/magnifier.svg" alt="magnifier"></button>
 					</form>
 				</div>
@@ -29,7 +30,19 @@
 				</div>
 			</div>	
 		</main>
-		<footer class="footer">123</footer>
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__info">
+					<div class="footer__github">
+						<a href="https://github.com/dron185" class="footer__github-link"><img src="assets/svg/github.svg" alt="Github" class="footer__github-img"></a>
+					</div>
+					<div class="footer__year">2023</div>
+					<div class="footer__rsschool">
+						<a href="https://rs.school/js-stage0/" class="footer__rsschool-link"><img src="assets/svg/rs_school_js.svg" alt="Rs-school" class="footer__rsschool-img"></a>
+					</div>
+				</div>
+			</div>
+		</footer>
 	</div>
 	<script src="index.js"></script>
 </body>

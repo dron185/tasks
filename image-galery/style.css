@@ -29,8 +29,6 @@ html, body {
 	height: 100%;
 	line-height: 1;
 	font-family: 'Mulish', sans-serif;
-	/* background-color: #fafafa; */
-	/* background-color: #edf0ed; */
 	background-color: bisque;
 }
 
@@ -57,12 +55,24 @@ html, body {
 }
 
 .header__title {
+	position: relative;
 	font-size: 36px;
 	font-weight: 700;
 	color: rgb(80, 27, 116);
 }
 
+.header__title::after {
+	position: absolute;
+	content: '';
+	background-image: url(assets/img/image-gallery.png);
+	background-size: contain;
+	height: 39px;
+	width: 39px;
+	margin-left: 12px;
+}
+
 .header__search {
+	position: relative;
 	display: flex;
 	width: 300px;
 	margin-left: 20px;
@@ -116,7 +126,6 @@ html, body {
 	flex: 0 1 33.333%;
 	padding: 10px;
 	height: 250px;
-
 	/* position: relative; */
 }
 
@@ -139,3 +148,65 @@ html, body {
 	left: 0;
 	
 } */
+
+.header__cross {
+	position: absolute;
+	left: 240px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 17px;
+	height: 17px;
+	cursor: pointer;
+}
+
+.header__cross_hidden {
+	display: none;
+}
+
+.header__cross::before, .header__cross::after {
+	position: absolute;
+	content: '';
+	top: 50%;
+	width: 17px;
+	height: 1px;
+	background-color: black;
+}
+
+.header__cross::before {
+	transform: rotate(45deg);
+}
+
+.header__cross::after {
+	transform: rotate(-45deg);
+}
+
+/*------------Footer-------------*/
+.footer__info {
+	padding: 25px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.footer__github-link {
+	cursor: pointer;
+}
+.footer__github-img {
+	height: 50px;
+	width: 50px;
+}
+
+.footer__year {
+	font-size: 26px;
+   font-weight: 700;
+   color: rgb(80, 27, 116);
+}
+
+.footer__rsschool {
+	
+}
+.footer__rsschool-img {
+	height: 50px;
+}
+
+

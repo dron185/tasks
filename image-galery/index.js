@@ -1,6 +1,6 @@
 // const button = document.querySelector('.header__search-btn');
 const search = document.getElementById('search');
-
+const cross = document.querySelector('.header__cross');
 // const accessKey = 'Xag3asSOqMZBOXZBV9SEB3rYrmIYSBY46IMEjTzLDv8';
 
 
@@ -27,8 +27,6 @@ async function getData(urlApi) {
 getData(url);
 
 function showData(imgUrl) {
-	
-
 	const img = document.createElement('img');
 	img.classList.add('gallery__img');
 	img.alt = `image`;
@@ -39,6 +37,13 @@ function showData(imgUrl) {
 	gallery.append(imgBox);
 }
 
+function inputChange() {
+	if (search.value) {
+		cross.classList.remove('header__cross_hidden');
+	} else {
+		cross.classList.add('header__cross_hidden');
+	}
+}
 
 const form = document.querySelector('.header__search');
 
@@ -50,5 +55,14 @@ form.addEventListener('submit', function (event) {
 	if (search.value) {
 		gallery.innerHTML = "";
 		getData(apiSearchUrl);
+		// search.value = '';     //делает пустую строку search после отправки запроса
+		// cross.classList.add('header__cross_hidden');
 	}
 })
+
+function clearSearch() {
+	search.value = '';
+	cross.classList.add('header__cross_hidden');
+}
+
+

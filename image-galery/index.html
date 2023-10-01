@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+	<link rel="icon" href="assets/img/favicon-16x16.png">
+	<link rel="stylesheet" href="style.css">
+	<title>image-gallery</title>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="container">
+				<div class="header__box">
+					<h1 class="header__title">Image-gallery API</h1>
+					<form method="post" class="header__search">
+						<input autocomplete="off" autofocus type="text" name="search" id="search" placeholder="Search..." class="header__input" oninput="inputChange()">
+						<span class="header__cross header__cross_hidden" onclick="clearSearch()"></span>
+						<button type="submit" class="header__search-btn"><img src="assets/svg/magnifier.svg" alt="magnifier"></button>
+					</form>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<div class="container">
+				<div class="main__gallery gallery">
+				</div>
+			</div>	
+		</main>
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__info">
+					<div class="footer__github">
+						<a href="https://github.com/dron185" class="footer__github-link"><img src="assets/svg/github.svg" alt="Github" class="footer__github-img"></a>
+					</div>
+					<div class="footer__year">2023</div>
+					<div class="footer__rsschool">
+						<a href="https://rs.school/js-stage0/" class="footer__rsschool-link"><img src="assets/svg/rs_school_js.svg" alt="Rs-school" class="footer__rsschool-img"></a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="index.js"></script>
+</body>
+</html>

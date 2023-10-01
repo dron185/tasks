@@ -55,7 +55,6 @@ form.addEventListener('submit', function (event) {
 		gallery.innerHTML = "";
 		getData(apiSearchUrl);
 		// search.value = '';     //делает пустую строку search после отправки запроса
-		// cross.classList.add('header__cross_hidden');
 	}
 })
 

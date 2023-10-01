@@ -28,8 +28,10 @@ input, button {
 html, body {
 	height: 100%;
 	line-height: 1;
-	font-family: 'Mulish', sans-serif;
+	letter-spacing: 0.7px;
+	font-family: 'Balsamiq Sans', cursive;
 	background-color: bisque;
+	background: linear-gradient(#fcd9ae, rgb(250, 237, 212)) fixed;
 }
 
 .wrapper {
@@ -47,6 +49,7 @@ html, body {
 }
 
 /* --------Header------------ */
+
 .header__box {
 	display: flex;
 	justify-content: space-between;
@@ -66,8 +69,8 @@ html, body {
 	content: '';
 	background-image: url(assets/img/image-gallery.png);
 	background-size: contain;
-	height: 39px;
-	width: 39px;
+	height: 36px;
+	width: 36px;
 	margin-left: 12px;
 }
 
@@ -113,6 +116,7 @@ html, body {
 /* --------Main------------ */
 
 .main {
+	padding-top: 10px;
 	flex: 1 1 auto;
 }
 
@@ -126,7 +130,6 @@ html, body {
 	flex: 0 1 33.333%;
 	padding: 10px;
 	height: 250px;
-	/* position: relative; */
 }
 
 .gallery__img {
@@ -137,17 +140,6 @@ html, body {
 	cursor: pointer;
 }
 
-/* .gallery__box::after {
-	content: "";
-	width: calc(100%-20px);
-	height: 100%;
-	position: absolute;
-	background-color: rgba(21, 24, 36, 0.4);
-	z-index: 2;
-	top: 0;
-	left: 0;
-	
-} */
 .header__input {
 	color: green;
 }

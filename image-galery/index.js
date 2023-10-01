@@ -1,12 +1,8 @@
 const search = document.getElementById('search');
 const cross = document.querySelector('.header__cross');
-// const accessKey = 'Xag3asSOqMZBOXZBV9SEB3rYrmIYSBY46IMEjTzLDv8';
-
-
 const url = 
 'https://api.unsplash.com/search/photos?query=spring&per_page=30&client_id=Xag3asSOqMZBOXZBV9SEB3rYrmIYSBY46IMEjTzLDv8';
 const gallery = document.querySelector('.gallery');
-
 const apiSearch = 'https://api.unsplash.com/search/photos?query=';
 
 async function getData(urlApi) {

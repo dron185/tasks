@@ -28,6 +28,7 @@ input, button {
 html, body {
 	height: 100%;
 	line-height: 1;
+	background-color: bisque;
 }
 
 .wrapper{
@@ -43,6 +44,14 @@ html, body {
 /* ---------Main----------- */
 .main {
 	flex: 1 1 auto;
+}
+
+canvas {
+	/* background: #5f8fe7; */
+	display: block;
+	margin: 0 auto;
+	margin-top: 50px;
+	border-radius: 10px;
 }
 
 /* ---------Footer----------- */

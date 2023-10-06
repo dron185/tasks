@@ -29,6 +29,9 @@ html, body {
 	height: 100%;
 	line-height: 1;
 	background-color: bisque;
+	font-family: 'Caveat Brush', cursive;
+	color: azure;
+	font-size: 20px;
 }
 
 .wrapper{
@@ -52,6 +55,7 @@ canvas {
 	margin: 0 auto;
 	margin-top: 50px;
 	border-radius: 10px;
+
 }
 
 /* ---------Footer----------- */

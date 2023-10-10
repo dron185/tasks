@@ -11,7 +11,7 @@ const bird = document.createElement('img');
 let birdX = 600;
 let birdY = 250;
 // bird's change positions
-let newY = 1.5;
+let gravitation = 1.5;
 // the distance between animals
 let distance = 300;
 
@@ -26,42 +26,64 @@ animalsArray[0] = {
 	posX : canvas.width,
 	posY : 200
 }
+let score = 0;
+let bestScore = [0];
+
+function showScore() {
+	// context.fillStyle = 'rgb(230, 117, 160)';
+	context.fillStyle = '#000000';
+	context.font = '52px Caveat Brush';
+	context.fillText('Score: ' + score, 20, 45);
+	context.fillText('Best score: ' + Math.max.apply(null, bestScore), 190, 45);
+}
 
 bird.onload = function draw() {
-	let score = animalsArray.length - 1;
 	context.drawImage(background, 0, 0);
 	context.drawImage(monkeyCorner, 0, canvas.height - monkeyCorner.height);
 	context.drawImage(bird, birdX, birdY);
-	birdY += newY;
+	birdY += gravitation;
+
+	showScore();
+
+	animalsArray.forEach(element => {
+		if (element.posX == 250) {
+			score++;
+		}
+	});
 
 	for (let i = 0; i < animalsArray.length; i++) {
 		context.drawImage(monkeyHang, animalsArray[i].posX, -animalsArray[i].posY);
 		context.drawImage(snake, animalsArray[i].posX + 100, monkeyHang.height + distance - animalsArray[i].posY );
 		animalsArray[i].posX -= 1;
-		if (animalsArray[i].posX == 300 ) { 
+		if ( animalsArray[i].posX == 800 ) {  // or 700
 			animalsArray.push({
 				posX : canvas.width,
 				posY : Math.floor(Math.random() * snake.height)
 			});
-		} 
-		
-		context.fillStyle = 'azure';
-		context.font = '52px Caveat Brush';
-		context.fillText('Score: ' + score, 20, 45);
+		}
 
 		// при касании птицей других животных и земли - перезагрузка
-		if (birdX + bird.width >= animalsArray[i].posX + 100 && birdX <= animalsArray[i].posX + monkeyHang.width -100 && 
+		if (birdX + bird.width >= animalsArray[i].posX + 100 && birdX <= animalsArray[i].posX + monkeyHang.width -130 && 
 			(birdY <= -animalsArray[i].posY + monkeyHang.height || birdY + bird.height >= -animalsArray[i].posY + monkeyHang.height + distance) 
 			|| birdY + bird.height >= canvas.height) {
+
+			bestScore.push(score);
+			console.log(bestScore)
+			localStorage.setItem('myScore', JSON.stringify(bestScore));
 
 			alert("GAME OVER!");
 			document.location.reload();
 			clearInterval(interval);
+			// cancelAnimationFrame();
 		}
 	}
 	requestAnimationFrame(draw);
 }
 
+bestScore = JSON.parse(localStorage.getItem('myScore'))
+console.log(Math.max.apply(null, bestScore))
+
 document.addEventListener('keydown', () => {
 	birdY -= 60;
 })
+

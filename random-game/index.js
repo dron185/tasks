@@ -28,7 +28,7 @@ animalsArray[0] = {
 }
 let score = 0;
 
-bird.onload = function draw() {
+function draw() {
 	context.drawImage(background, 0, 0);
 	context.drawImage(monkeyCorner, 0, canvas.height - monkeyCorner.height);
 	context.drawImage(bird, birdX, birdY);
@@ -45,6 +45,7 @@ bird.onload = function draw() {
 		}
 	});
 
+	let animation = requestAnimationFrame(draw);
 	for (let i = 0; i < animalsArray.length; i++) {
 		context.drawImage(monkeyHang, animalsArray[i].posX, -animalsArray[i].posY);
 		context.drawImage(snake, animalsArray[i].posX + 100, monkeyHang.height + distance - animalsArray[i].posY );
@@ -62,27 +63,39 @@ bird.onload = function draw() {
 			|| birdY + bird.height >= canvas.height) {
 			scoreArray.push(score);
 			localStorage.setItem('myScore', JSON.stringify(scoreArray));
-			alert("GAME OVER!");
-			document.location.reload();
-			clearInterval(interval);
-			// cancelAnimationFrame();
+
+			document.querySelector('.modal').classList.add('open');
+			document.querySelector('.modal__button').addEventListener('click', () => {
+				document.querySelector('.modal').classList.remove('open');
+				document.location.reload();
+			})
+			// alert("GAME OVER!");
+			// document.location.reload();
+			
+			cancelAnimationFrame(animation);
+			// clearInterval(animation);
 		}
 	}
-	requestAnimationFrame(draw);
+	
 }
+bird.onload = draw;
 
 scoreArray = JSON.parse(localStorage.getItem("myScore"));
-// console.log(scoreArray)
+console.log(scoreArray)
 
+// best score and score of the last 10 games
 let bestScore;
+let totalResult;
 if (scoreArray == null) {
 	bestScore = 0;
+	totalResult = 0;
 } else {
 	bestScore = Math.max.apply(null, scoreArray);
+	totalResult = scoreArray.slice(-10);
 }
 
 function showScore() {
-	context.fillStyle = 'bisque';
+	context.fillStyle = '#ffffff';
 	context.font = '52px Caveat Brush';
 	context.fillText('Score: ' + score, 20, 45);
 	context.fillText('Best score: ' + bestScore, 190, 45);
@@ -92,3 +105,7 @@ document.addEventListener('keydown', () => {
 	birdY -= 60;
 })
 
+// results of the last 10 games
+const modalRes = document.querySelector('.modal__results');
+console.log(totalResult);
+modalRes.innerHTML = totalResult;

@@ -28,8 +28,6 @@ input, button {
 html, body {
 	height: 100%;
 	line-height: 1;
-	background-color: rgb(230, 117, 160);
-	background-color: rgb(197, 89, 56);
 	background-color: bisque;
 	font-family: 'Caveat Brush', cursive;
 	color: azure;
@@ -43,8 +41,20 @@ html, body {
    flex-direction: column;
 }
 
-/* ---------Header----------- */
+.container {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 0 15px;
+	box-sizing: content-box;
+}
 
+/* ---------Header----------- */
+.header__title {
+	margin-top: 15px;
+	font-size: 36px;
+	color: #0a64ad;
+	text-align: center;
+}
 
 /* ---------Main----------- */
 .main {
@@ -55,9 +65,103 @@ canvas {
 	/* background: #5f8fe7; */
 	display: block;
 	margin: 0 auto;
-	margin-top: 50px;
+	margin-top: 15px;
 	border-radius: 10px;
 
 }
 
+/*-----------modal window-------------*/
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 773px;
+	z-index: 10;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	/* background-color: rgba(0, 0, 0, 0.3); */
+	overflow-y: auto;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.5s;
+}
+
+.modal.open {
+	visibility: visible;
+	opacity: 1;
+}
+
+.modal__box {
+	max-width: 900px;
+	margin: 20px;
+	padding: 20px;
+	background-color: grey;
+	box-shadow: 4px 4px 8px 0px rgba(209, 196, 123, 0.2);
+	transform: scale(0);
+	transition: all 0.7s;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.modal__box > *:not(:last-child) {
+	margin-bottom: 20px;
+}
+
+.modal.open .modal__box {
+	transform: scale(1);
+}
+
+.modal__title {
+	font-size: 34px;
+}
+
+.modal__text {
+	font-size: 28px;
+}
+
+.modal__results {
+	font-size: 28px;
+}
+
+.modal__button {
+	min-height: 38px;
+	padding: 0 20px;
+	font-size: 28px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.3s ease-in;
+}
+
+.modal__button:hover {
+	opacity: 0.7;
+}
+
 /* ---------Footer----------- */
+
+.footer__info {
+	padding: 15px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.footer__github-link {
+	cursor: pointer;
+}
+.footer__github-img {
+	height: 50px;
+	width: 50px;
+}
+
+.footer__year {
+	font-size: 36px;
+   /* font-weight: 700; */
+   color: #0a64ad;
+}
+
+.footer__rsschool-img {
+	height: 50px;
+}

@@ -82,7 +82,6 @@ canvas {
 	display: grid;
 	align-items: center;
 	justify-content: center;
-	/* background-color: rgba(0, 0, 0, 0.3); */
 	overflow-y: auto;
 	visibility: hidden;
 	opacity: 0;
@@ -118,12 +117,18 @@ canvas {
 	font-size: 34px;
 }
 
+.modal__total {
+	font-size: 28px;
+}
+
 .modal__text {
 	font-size: 28px;
+	text-decoration: underline;
 }
 
 .modal__results {
 	font-size: 28px;
+	text-decoration: underline;
 }
 
 .modal__button {

@@ -62,12 +62,11 @@ html, body {
 }
 
 canvas {
-	/* background: #5f8fe7; */
+	max-width: 100%;
 	display: block;
 	margin: 0 auto;
 	margin-top: 15px;
 	border-radius: 10px;
-
 }
 
 /*-----------modal window-------------*/
@@ -169,4 +168,31 @@ canvas {
 
 .footer__rsschool-img {
 	height: 50px;
+}
+
+@media (max-width: 1024px) {
+	.header__title {
+		margin-top: 35px;
+	}
+	canvas {
+		margin-top: 35px;
+	}
+}
+
+@media (max-width: 950px) {
+	.header__title {
+		margin-top: 50px;
+	}
+	canvas {
+		margin-top: 50px;
+	}
+}
+
+@media (max-width: 800px) {
+	.header__title {
+		margin-top: 50px;
+	}
+	canvas {
+		margin-top: 90px;
+	}
 }

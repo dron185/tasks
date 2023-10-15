@@ -123,7 +123,6 @@ document.addEventListener('keydown', () => {
 	waveAudio.play();
 })
 
-
 console.log(`60/60
 Вёрстка +10
 реализован интерфейс игры +5

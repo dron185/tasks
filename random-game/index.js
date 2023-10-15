@@ -21,6 +21,18 @@ monkeyHang.src = 'assets/img/monkey4.png';
 snake.src = 'assets/img/snake.png';
 bird.src = 'assets/img/bird.png';
 
+//sound
+const waveAudio = new Audio();
+const scoreAudio = new Audio();
+const winAudio = new Audio();
+const gameoverAudio = new Audio();
+const bgAudio = new Audio();
+
+waveAudio.src = 'assets/audio/fly.mp3';
+scoreAudio.src = 'assets/audio/score.mp3';
+winAudio.src = 'assets/audio/win.mp3';
+gameoverAudio.src = 'assets/audio/gameover.mp3';
+
 let animalsArray = [];
 animalsArray[0] = {
 	posX : canvas.width,
@@ -58,6 +70,7 @@ function draw() {
 		// добавляем очки при прохождении animals позиции 250
 		if ( animalsArray[i].posX == 250 ) {
 			score++;
+			scoreAudio.play();
 		}
 
 		// при касании птицей других животных и земли - game over
@@ -66,6 +79,7 @@ function draw() {
 			|| birdY + bird.height >= canvas.height) {
 
 			isGame = false;
+			gameoverAudio.play();
 			modalTitle.innerHTML = 'GAME OVER!';
 			modalScore.innerHTML = score;
 
@@ -80,6 +94,7 @@ function draw() {
 		// при достижении 5 очков - победа
 		if (score == 5) {
 			isGame = false;
+			winAudio.play();
 			modalTitle.innerHTML = 'YOU WON! Congratulations!';
 			modalScore.innerHTML = score;
 
@@ -105,4 +120,5 @@ bird.onload = draw;
 
 document.addEventListener('keydown', () => {
 	birdY -= 60;
+	waveAudio.play();
 })
